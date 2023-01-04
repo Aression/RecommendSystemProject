@@ -1,5 +1,6 @@
 from .ResponsorHeader import *
 
+# 随便选一个作为初始展示页面
 ThisUserAccount = -1
 UseCustomUser = False
 
@@ -10,8 +11,11 @@ route_base = Blueprint('', __name__)
 @route_base.route('/login', methods=["GET", "POST"])
 def Login():
     req = request.values
-    InUserId = req["user_account"]
-    InUserPassword = req["user_password"]
+    print(f'received request values:{request.values}')
+    InUserId = req.get('user_account')
+    InUserPassword = req.get('user_password')
+
+    # assert InUserPassword is not None and InUserId is not None
     RespCode = 406
     if 0 < int(InUserId) < 60001 and InUserPassword == str(123456):
         RespCode = 200
@@ -19,6 +23,7 @@ def Login():
         global ThisUserAccount, UseCustomUser
         ThisUserAccount = InUserId
         UseCustomUser = False
+        print(f'user id changed to {InUserId}')
 
     resp = {'code': RespCode}
     return jsonify(resp)
@@ -61,6 +66,10 @@ def ApplyCustomTags():
 def ShowRecommendation():
     global ThisUserAccount, UseCustomUser
     MappedUserId = ThisUserAccount
+    print(f'when /home is called, current global user is {ThisUserAccount}')
+    if MappedUserId == -1:
+        resp = {'code': 200}
+        return jsonify(resp)
     if UseCustomUser:
         Query = {"CUID": ThisUserAccount}
         Result = CCustomUser.find_one(Query)
@@ -70,11 +79,17 @@ def ShowRecommendation():
     Result = CUser.find_one(Query)
     RecommendPairs = Result["URec"]
     RecommendList = []
-    for i in range(15):
-        IMDBQueryResult = RequestBaseInfoById(MIdToIMDBId(RecommendPairs[i]["MID"]))
+    for i in range(6):
+        movieId = list(RecommendPairs[i].keys())[0]
+        IMDBQueryResult = RequestBaseInfoById(MIdToIMDBId(movieId))
+        print(IMDBQueryResult)
+        IMDBQueryResult = IMDBQueryResult['results'][0]
         RecommendList.append({"movie_imgae": IMDBQueryResult["image"], "movie_title": IMDBQueryResult["title"],
-                              "movie_id ": RecommendPairs[i]["MID"]})
-
+                              "movie_id ": movieId})
+    tmp1 = RecommendList[0:4]
+    tmp2 = RecommendList[:]
+    RecommendList.append(tmp1)
+    RecommendList.append(tmp2)
     resp = {'code': 200, "recommendmovies": RecommendList}
     return jsonify(resp)
 

@@ -1,0 +1,3680 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>amis demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="./sdk/sdk.css" />
+    <link rel="stylesheet" href="./sdk/helper.css" />
+    <link rel="stylesheet" href="./sdk/iconfont.css" />
+    <!-- 这是默认主题所需的，如果是其他主题则不需要 -->
+    <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
+    <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
+    <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
+    <style>
+      html,
+      body,
+      .app-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="app-wrapper"></div>
+    <script src="./sdk/sdk.js"></script>
+    <script type="text/javascript">
+      (function () {
+        let amis = amisRequire('amis/embed');
+        // 通过替换下面这个配置来生成不同页面
+        let amisJSON = {
+  "type": "page",
+  "title": "",
+  "body": [
+    // {
+    //   "type": "breadcrumb",
+    //   "items": [
+    //     {
+    //       "label": "首页",
+    //       "href": "https://baidu.gitee.com/",
+    //       "icon": "fa fa-home"
+    //     }
+    //   ],
+    //   "id": "u:5827fcf907d9"
+    // },
+    // {
+    //   "type": "divider",
+    //   "id": "u:09137a267a26"
+    // },
+    {
+      "type": "tpl",
+      "tpl": "首选推荐",
+      "inline": true,
+      "wrapperComponent": "",
+      "id": "u:6881bebb8721",
+      "style": {
+        "fontFamily": "",
+        "fontSize": 23
+      }
+    },
+    {
+      "type": "flex",
+      "className": "p-1",
+      "items": [
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:9f1f51fdeb0f",
+              "thumbRatio": "1:1",
+              "thumbMode": "contain",
+              "src": "https://t13.baidu.com/it/u=2546884868,750783994&fm=58&app=83&size=w931&n=0&f=JPEG&fmt=auto?sec=1672592400&t=66e87b17fa2024427d64681eb440261f"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:7c32c1ee0392"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:61042c90c8dc",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:4e47cb1004e5"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:6e3170488058"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:8730e3aafd69"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:fb1868109658"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:11e662574a3e"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:6f0e06b5dd1e"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:853e06c263f8",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:101384ebe164"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:ac2cf15e54ee"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:0c818ec14346"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:a0aac8c7ed64"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:01d0069e0e9d"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:0c83351c5ddf"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:c01e3c312ce9",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:7ac5aedea8f6"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:2a9455e1a1ad"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:d23448577743"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:4e48ee1c141b"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:870369671efa"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:7fc829189e06"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:a48a2a8c330e",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:a5fb77537ed7"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:7f550085297e"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:3b17b7b54e07"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:24919167131b"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:830099768e5f"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:afb20731ee1d"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:cb1b24175cf7",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:5e308b286380"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:a3ba378d4ac8"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:5ace5c056767"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:2eaf4d38de72"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:3fd4c4f50a31"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:b03012af1e45"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:e3515a51b989",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:60dbc9cd5447"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:d9ce43b0d378"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:1e078d8a40de"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:fea1d3bd9e88"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:1f49ee8f9260"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:41236621a11d"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:21e41d4b29f9",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:0ac485e84868"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:346de339fb63"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:6b7fe85486ab"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:374622bd140c"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:2252ddfaa8cc"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:4ca45833bbd0"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:a7cd915fc8b7",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:cb2ff9e1c9fa"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:2f99548508cf"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:d8b155c60b81"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:cf42645cf9eb"
+        }
+      ],
+      "style": {
+        "position": "static"
+      },
+      "direction": "row",
+      "justify": "flex-start",
+      "alignItems": "stretch",
+      "id": "u:7de9a2cbf5cc"
+    },
+    {
+      "type": "tpl",
+      "tpl": "最近更新推荐",
+      "inline": true,
+      "wrapperComponent": "",
+      "id": "u:57277f4c2fed",
+      "style": {
+        "fontFamily": "",
+        "fontSize": 23
+      }
+    },
+    {
+      "type": "flex",
+      "className": "p-1",
+      "items": [
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:15a792a7752f"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:aa93a99ecfa1"
+                },
+                {
+                  "type": "wrapper",
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:15e0c01d86d6",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:8ad58a29d262",
+                      "body": "电影名"
+                    }
+                  ]
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:b1b89db420cc"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:cec683ac0a69"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:0d2ea4fa7559"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:517549b79cdb"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:4c37e1c8b362"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:e6a94cfbe87e",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:b13ce99e71da"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:6442bad3a848"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:88206b48a765"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:0cc98b72dcd1"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:12f4680cb7cb"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:71ab70de72db"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:bbeb1c4e27b6",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:16ac0dd59d71"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:cb6d1ad1b5cf"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:4ced835111df"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:0aa923e961ef"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:809bd3f09e96"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:276c4b5e8952"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:8a77bcac9739",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:d3ca759e5f99"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:8347ae9b5910"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:0f66dc2306dd"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:09ac8640d89b"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:015f4b42f62d"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:3321f39d9ad3"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:a40cef2e379a",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:216516dcd89d"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:62a9205f8953"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:b8cd1cada190"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:7049cfc0d0af"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:e61fec244b8e"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:9d32107076b1"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:6cb77b795a45",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:7b27d969d749"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:a20338161d61"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:646a64d0aff4"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:5a50e5edd14f"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:64e00d8951c0"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:f11ce4dc3368"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:8f99ba0419da",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:1c826a55f768"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:532f84cfb5cc"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:68707010a504"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:a592aed57b10"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:47cdaf1a1011"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:975157694324"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:264291a5581a",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:a0a08a2dbf50"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:bbfefbecb65d"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:c0025bd3ec07"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:be8561a81ec8"
+        }
+      ],
+      "style": {
+        "position": "static"
+      },
+      "direction": "row",
+      "justify": "flex-start",
+      "alignItems": "stretch",
+      "id": "u:9f738cb8c701"
+    },
+    {
+      "type": "tpl",
+      "tpl": "“等你来评”推荐",
+      "inline": true,
+      "wrapperComponent": "",
+      "id": "u:c4c622b78560",
+      "style": {
+        "fontFamily": "",
+        "fontSize": 23
+      }
+    },
+    {
+      "type": "flex",
+      "className": "p-1",
+      "items": [
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:02c71382cab1"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:b93a631bca58"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:3e3d7c293dbd",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:c87292962e9c"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:cfc3ffbd2d0f"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:b67853ed18d1"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:a7185587e8be"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:ebe20a3b12e3"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:f7008c1695a0"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:344036318bce",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:73b4deaa0589"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:1531ff2ebd2e"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:6f5b866e80f1"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:04f0e407d977"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:19b92954776e"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:635841f946e3"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:77c495c1c0da",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:3d2d00148eda"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:aadda58f976b"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:1b6236f5cb8f"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:ed9e8f509d04"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:50ead96d0d5d"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:3e6b85293d6e"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:e95fa512461a",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:300446bda35c"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:69798f4a0b7a"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:4e2cd825ebbf"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:a2c5eb214638"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:98700a5c727e"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:00923c601d44"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:ff77d357fa02",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:b3aad57f5ec4"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:925a3289ab02"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:7259622e0bae"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:a7f4e7563771"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:d9b8da330d0b"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:377fa20795d8"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:625152a6772c",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:14c29d36685d"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:7fa5aab5b848"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:b09688477a0c"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:b54379c0fd4a"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:e887634283a8"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:0f378874804a"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:0866cd56b416",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:e15701701f6b"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:93a7e62818c0"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:c20f1ca784c2"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:4cda0563de1e"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:1e94f30b2b8f"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:6c36f2d5ffe9"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:7599957b7752",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:eca1a6b1f1a1"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:45fc7f13f9ac"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:ca6146c5172c"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:8ccb8e0d4d3c"
+        }
+      ],
+      "style": {
+        "position": "static"
+      },
+      "direction": "row",
+      "justify": "flex-start",
+      "alignItems": "stretch",
+      "id": "u:bc5fb3826606"
+    },
+    {
+      "type": "tpl",
+      "tpl": "去年最爱推荐",
+      "inline": true,
+      "wrapperComponent": "",
+      "id": "u:db201cc6b42a",
+      "style": {
+        "fontFamily": "",
+        "fontSize": 23
+      }
+    },
+    {
+      "type": "flex",
+      "className": "p-1",
+      "items": [
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:60744d684ea0"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:0bf53f6572a8"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:5609dc147191",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:c34972e3b296"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:c9bfac7e32a7"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:845dc97522f8"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:9d428fd432df"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:fa87927ed7de"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:42d3e9f5ae54"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:0184579bfc37",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:d2dedab4807f"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:08460f2d37d2"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:b37eb88e0c9e"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:2a97d6afe58f"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:916740fa33ec"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:52f680e6761b"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:3a5a56139ecb",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:cbb6dadbce6c"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:380d7777b68b"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:ad4afd101446"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:1fb31f3b9002"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:0ef1a6d37c23"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:22f338116e5e"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:4c760f109803",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:241a28cb1274"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:afd0023827b6"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:f8688582d053"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:dc32c2b15e0a"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:3fe0d4c57722"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:7b88fd48fb92"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:1d99de960d48",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:364702bec2f5"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:9b0097726b51"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:898b7f84c075"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:635b60da76f0"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:a937a41a75b4"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:d0779954e11d"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:7270cfd53b88",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:6d42b3ab6304"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:e8e914fe2a1e"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:89d5bfeeb529"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:3772e040723e"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:106fcd3feb3f"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:4b451cdfb6d7"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:bbf4df5cce30",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:856055688658"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:0e442a43d69d"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:7f897286c795"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:02c382c20ecb"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:124d17b4694f"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:71aecaaeada5"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:86f66bcc5acb",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:bc06e8778b90"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:a706d08f9c17"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:0775e12ccaa1"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:d689833caac1"
+        }
+      ],
+      "style": {
+        "position": "static"
+      },
+      "direction": "row",
+      "justify": "flex-start",
+      "alignItems": "stretch",
+      "id": "u:71b757305b07"
+    },
+    {
+      "type": "tpl",
+      "tpl": "新成员推荐",
+      "inline": true,
+      "wrapperComponent": "",
+      "id": "u:0cf887c846e5",
+      "style": {
+        "fontFamily": "",
+        "fontSize": 23
+      }
+    },
+    {
+      "type": "flex",
+      "className": "p-1",
+      "items": [
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:8416a94818a5"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:b61b79570b2f"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:5ce72f7ccf26",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:a7b95b3e9317"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:e79aaf4fd907"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:4430139f33ca"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:5cbd84f5cde1"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:8c729ee5bd8f"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:b27191e6e39e"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:6a3fd6e8c338",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:477ded8338f2"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:6f46465d123b"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:c55119657456"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:d4d616002b5a"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:0b429e2a38e9"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:11b314be34f2"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:f5182c31ac4b",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:c64d40e82a94"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:f7ebb405236c"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:ddebb4014379"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:12d0b0e4d118"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:d0af5bf8f41c"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:112df133228c"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:2277c664fa5e",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:fd0248a59de4"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:4d535da4654b"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:44dbe0e9353a"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:53511195d286"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:d7acbccb3aaf"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:d3dfa1361525"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:a81db939cf1c",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:2b036b5d245d"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:d32dd872d6b4"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:dd68c2e30126"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:df438b4be56d"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:0d4d325993cd"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:7ce80f7ef742"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:37061411d94d",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:66bccfb9290e"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:46a3de4aa5dc"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:29de34ccf1ec"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:6eb0ba5f8515"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:73cea4d1d384"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:d7acc56f65ba"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:a218366c0135",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:0b5fe813a33c"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:dfc86379432d"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:c9da765d8b20"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:bec0365226a7"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "image",
+              "id": "u:f1169726bb20"
+            },
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:11801f3fc365"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                    {
+                      "type": "link",
+                      "value": "http://www.baidu.com/",
+                      "id": "u:8ac1a508f04b",
+                      "body": "电影名"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:86a53faeb051"
+                },
+                {
+                  "type": "wrapper",
+                  "body": [
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": "auto"
+                  },
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:acc6aecfb49b"
+                }
+              ],
+              "style": {
+                "position": "static"
+              },
+              "direction": "row",
+              "justify": "flex-start",
+              "alignItems": "stretch",
+              "id": "u:649c42e55af8"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:4a089a18f932"
+        }
+      ],
+      "style": {
+        "position": "static"
+      },
+      "direction": "row",
+      "justify": "flex-start",
+      "alignItems": "stretch",
+      "id": "u:79f05cebb07b"
+    }
+  ],
+  "id": "u:beeb5b32df40",
+  "asideResizor": false,
+  "pullRefresh": {
+    "disabled": true
+  },
+  "aside": [
+  ],
+  "style": {
+    "fontFamily": "",
+    "fontSize": 12,
+    "fontWeight": "bold"
+  },
+  "toolbar": [
+  ]
+};
+        let amisScoped = amis.embed('#root', amisJSON);
+      })();
+    </script>
+  </body>
+</html>

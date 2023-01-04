@@ -7,6 +7,6 @@ App.register_blueprint(route_base, url_prefix="/")
 # launch
 # launch databse local debug
 if __name__ == '__main__':
-    # DBC.ConstructAll()
+    # DBC.ConstructRecommend()
 
-    App.run(host='0.0.0.0', port=8002, debug=False)
+    App.run(host='0.0.0.0', port=8082, debug=True)

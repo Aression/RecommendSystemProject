@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>amis demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="./sdk/sdk.css" />
+    <link rel="stylesheet" href="./sdk/helper.css" />
+    <link rel="stylesheet" href="./sdk/iconfont.css" />
+    <!-- 这是默认主题所需的，如果是其他主题则不需要 -->
+    <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
+    <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
+    <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
+    <style>
+      html,
+      body,
+      .app-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="app-wrapper"></div>
+    <script src="./sdk/sdk.js"></script>
+    <script type="text/javascript">
+      (function () {
+        let amis = amisRequire('amis/embed');
+        // 通过替换下面这个配置来生成不同页面
+        let amisJSON = {
+  "type": "page",
+  "body": [
+    {
+      "type": "flex",
+      "className": "p-1",
+      "items": [
+        {
+          "type": "wrapper",
+          "body": [
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:37ad7ec60fc8"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:a0898ddedddf"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "tpl",
+              "tpl": "注册",
+              "inline": true,
+              "wrapperComponent": "",
+              "id": "u:20947377a656",
+              "style": {
+                "fontFamily": "",
+                "fontSize": 20,
+                "fontWeight": "bold"
+              }
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:e39b1262bd39"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:419f45e73419"
+        }
+      ],
+      "style": {
+        "position": "static"
+      },
+      "direction": "row",
+      "justify": "flex-start",
+      "alignItems": "stretch",
+      "id": "u:82e1144fd081"
+    },
+    {
+      "type": "divider",
+      "id": "u:72a678b097c5"
+    },
+    {
+      "type": "flex",
+      "className": "p-1",
+      "items": [
+        {
+          "type": "wrapper",
+          "body": [
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:8664dfe2d26f"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "form",
+              "title": "用户注册",
+              "mode": "horizontal",
+              "api": {
+                "method": "post",
+                "url": "/register",
+                "data": {
+                  "user_account": "${user_account}",
+                  "user_password": "${user_password}"
+                }
+              },
+              "body": [
+                {
+                  "type": "input-text",
+                  "name": "user_account",
+                  "label": "账号：",
+                  "required": true,
+                  "id": "u:76589d5737ed",
+                  "showCounter": false,
+                  "validations": {
+                    "minLength": 2
+                  }
+                },
+                {
+                  "type": "input-password",
+                  "name": "user_password",
+                  "label": "密码：",
+                  "required": true,
+                  "id": "u:0d7cf3ba1efe"
+                },
+                {
+                  "type": "input-password",
+                  "label": "重复密码",
+                  "name": "user_password1",
+                  "id": "u:d05f64879915",
+                  "required": true,
+                  "validations": {
+                    "equalsField": "user_password"
+                  },
+                  "showCounter": false,
+                  "validationErrors": {
+                    "equalsField": "两次输入密码不一致！"
+                  }
+                }
+              ],
+              "id": "u:4f6fff1837c0",
+              "redirect": ""
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:abd2353a20ed"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:8d8397d1fbce"
+        }
+      ],
+      "style": {
+        "position": "static"
+      },
+      "direction": "row",
+      "justify": "flex-start",
+      "alignItems": "stretch",
+      "id": "u:a966024f55ac"
+    }
+  ],
+  "id": "u:55b60f217749",
+  "toolbar": [
+  ],
+  "asideResizor": false,
+  "pullRefresh": {
+    "disabled": true
+  },
+  "initApi": {
+    "url": "http://localhost:8082",
+    "method": "get"
+  }
+};
+        let amisScoped = amis.embed('#root', amisJSON);
+      })();
+    </script>
+  </body>
+</html>

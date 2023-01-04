@@ -3,8 +3,8 @@ from flask_cors import CORS
 import pymongo
 
 App = Flask(__name__)
-CORS(App, resources={r'/*': {'origins': '*', 'supports_credentials': True, 'Access-Control-Allow-Origin': '*'}})
-
+# CORS(App, resources={r'/*': {'origins': '*', 'supports_credentials': True, 'Access-Control-Allow-Origin': '*'}})
+CORS(App, supports_credentials=True)
 Client = pymongo.MongoClient('mongodb://127.0.0.1:27017')
 DB = Client["PCD"]
 CUser = DB["User"]

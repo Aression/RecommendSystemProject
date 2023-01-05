@@ -1,43 +1,43 @@
 from .ResponsorHeader import *
+import random
 
 # 随便选一个作为初始展示页面
-ThisUserAccount = -1
+randInitialDisplay = random.randint(0, 100)
+ThisUserAccount = randInitialDisplay
 UseCustomUser = False
 
 route_base = Blueprint('', __name__)
 
 
-# 不考虑自定义用户的再次登录，这样就不用走数据库了
 @route_base.route('/login', methods=["GET", "POST"])
 def Login():
-    req = request.values
-    print(f'received request values:{request.values}')
-    InUserId = req.get('user_account')
-    InUserPassword = req.get('user_password')
+    req = json.loads(request.data)
+    print(f'received data:{req}')
+    InUserId = req['user_account']
+    InUserPassword = req['user_password']
 
-    # assert InUserPassword is not None and InUserId is not None
-    RespCode = 406
-    if 0 < int(InUserId) < 60001 and InUserPassword == str(123456):
-        RespCode = 200
-
+    passwd = ReadCustomUserPwd(InUserId)
+    if InUserPassword == passwd:
+        # 转为该用户的登录态
         global ThisUserAccount, UseCustomUser
         ThisUserAccount = InUserId
-        UseCustomUser = False
-        print(f'user id changed to {InUserId}')
-
-    resp = {'code': RespCode}
+        UseCustomUser = True
+        print(f'login success, user id changed to {InUserId}')
+        resp = {'code': 200}
+    else:
+        infomation = 'login denied, check your id or password'
+        raise RuntimeError(infomation)
     return jsonify(resp)
 
 
-# 只考虑注册不考虑自定义用户的再次登录
 @route_base.route('/register', methods=["GET", "POST"])
 def RegisterCustomUser():
-    req = request.values
+    req = json.loads(request.data)
     InUserAcc = req["user_account"]
-    # InUserPassword=req["user_password"]
+    InUserPassword = req["user_password"]
 
-    InsertCustomUser(InUserAcc)
-
+    InsertCustomUser(InUserAcc, InUserPassword)
+    print(f'register complete, current user is {InUserAcc}')
     global ThisUserAccount, UseCustomUser
     ThisUserAccount = InUserAcc
     UseCustomUser = True
@@ -48,18 +48,15 @@ def RegisterCustomUser():
 
 @route_base.route('/choose', methods=["GET", "POST"])
 def ApplyCustomTags():
-    req = request.values
+    req = json.loads(request.data)
     InCustomTags = req["taglist"]
-
-    global ThisUserAccount, UseCustomUser
-    UseCustomUser = True
-    ThisUserAccount = "114514"
-    if not UseCustomUser:
-        raise Exception("Choose tag when use existed user!")
-    UpdateCustomUser(ThisUserAccount, json.loads(InCustomTags))
-
-    resp = {'code': 200}
-    return jsonify(resp)
+    print(f'received tag preference{InCustomTags}')
+    try:
+        UpdateCustomUser(ThisUserAccount, InCustomTags)
+    except Exception as e:
+        print(e.__traceback__)
+        return jsonify({'code': 500})
+    return jsonify({'code': 200})
 
 
 @route_base.route('/home', methods=["GET"])
@@ -67,9 +64,6 @@ def ShowRecommendation():
     global ThisUserAccount, UseCustomUser
     MappedUserId = ThisUserAccount
     print(f'when /home is called, current global user is {ThisUserAccount}')
-    if MappedUserId == -1:
-        resp = {'code': 200}
-        return jsonify(resp)
     if UseCustomUser:
         Query = {"CUID": ThisUserAccount}
         Result = CCustomUser.find_one(Query)
@@ -79,38 +73,43 @@ def ShowRecommendation():
     Result = CUser.find_one(Query)
     RecommendPairs = Result["URec"]
     RecommendList = []
-    for i in range(6):
+    for i in range(15):
         movieId = list(RecommendPairs[i].keys())[0]
         IMDBQueryResult = RequestBaseInfoById(MIdToIMDBId(movieId))
         print(IMDBQueryResult)
-        IMDBQueryResult = IMDBQueryResult['results'][0]
-        RecommendList.append({"movie_imgae": IMDBQueryResult["image"], "movie_title": IMDBQueryResult["title"],
-                              "movie_id ": movieId})
-    tmp1 = RecommendList[0:4]
-    tmp2 = RecommendList[:]
-    RecommendList.append(tmp1)
-    RecommendList.append(tmp2)
+        RecommendList.append({"movie_imgae": IMDBQueryResult["Poster"], "movie_title": IMDBQueryResult["Title"],
+                              "movie_id": movieId})
+    print(RecommendList)
     resp = {'code': 200, "recommendmovies": RecommendList}
     return jsonify(resp)
 
 
 @route_base.route('/showMovies', methods=["GET", "POST"])
 def ShowDetails():
-    req = request.values
-    IMDBId = MIdToIMDBId(req["movie_id"])
+    req = json.loads(request.data)
+    print(f'received : {req}')
+    movieid = req["movie_id"]
+
+    IMDBId = MIdToIMDBId(movieid)
     IMDBQueryResult = RequestDetailInfoById(IMDBId)
 
     Query = {"MID": req["movie_id"]}
     Result = CMovie.find_one(Query)
+    localRating = round(Result['MAvgRating'], 2)
     resp = \
         {
             'code': 200,
-            "movie_cover": IMDBQueryResult["image"],
-            "movie_name": IMDBQueryResult["fullTitle"],
-            "movie_rating": Result["MAvgRating"],
-            "movie_tag": IMDBQueryResult["genres"],
-            "movie_introduction": IMDBQueryResult["plot"],
-            "movie_date": IMDBQueryResult["releaseDate"],
-            "movie_language": "English"
+            "movie_cover": IMDBQueryResult["Poster"],
+            "movie_name": IMDBQueryResult["Title"],
+            "movie_rating": localRating,
+            "movie_tag": list(IMDBQueryResult["Genre"].split(',')),
+            "movie_introduction": IMDBQueryResult["Plot"],
+            "movie_date": IMDBQueryResult["Released"],
+            "movie_language": IMDBQueryResult["Language"],
+            'movie_director': IMDBQueryResult['Director'],
+            'movie_country': IMDBQueryResult['Country'],
+            'movie_length': IMDBQueryResult['Runtime']
         }
+    print(IMDBQueryResult)
+    print(resp)
     return jsonify(resp)

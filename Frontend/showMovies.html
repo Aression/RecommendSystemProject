@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>amis demo</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <link rel="stylesheet" href="./sdk/sdk.css" />
     <link rel="stylesheet" href="./sdk/helper.css" />
@@ -17,778 +15,862 @@
     <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
     <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
     <style>
-      html,
-      body,
-      .app-wrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+        html,
+        body,
+        .app-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="root" class="app-wrapper"></div>
     <script src="./sdk/sdk.js"></script>
     <script type="text/javascript">
-      (function () {
-        let amis = amisRequire('amis/embed');
-        // 通过替换下面这个配置来生成不同页面
-        let amisJSON = {
-  "type": "page",
-  "body": [
-    {
-      "type": "flex",
-      "className": "p-1",
-      "items": [
-        {
-          "type": "wrapper",
-          "body": [
-            {
-              "type": "button",
-              "label": "返回",
-              "onEvent": {
-                "click": {
-                  "actions": [
-                    {
-                      "args": {
-                        "url": "https://www.bilibili.com/"
-                      },
-                      "actionType": "url"
-                    }
-                  ]
-                }
-              },
-              "id": "u:c9053cc9bb1c"
-            }
-          ],
-          "size": "xs",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 1,
-            "flexBasis": "auto"
-          },
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:5cbbbab1d8b1"
-        },
-        {
-          "type": "wrapper",
-          "body": [
-          ],
-          "size": "xs",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 1,
-            "flexBasis": "auto"
-          },
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:8e110c75bfab"
-        },
-        {
-          "type": "wrapper",
-          "body": [
-          ],
-          "size": "xs",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 1,
-            "flexBasis": "auto"
-          },
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:2e8ce757cc4b"
-        }
-      ],
-      "style": {
-        "position": "static"
-      },
-      "direction": "row",
-      "justify": "flex-start",
-      "alignItems": "stretch",
-      "id": "u:8caaa828881b"
-    },
-    {
-      "type": "flex",
-      "className": "p-1",
-      "items": [
-        {
-          "type": "flex",
-          "items": [
-            {
-              "type": "wrapper",
-              "size": "xs",
-              "body": [
-                {
-                  "type": "image",
-                  "id": "u:62279427091e",
-                  "width": 200,
-                  "height": 250,
-                  "src": "https://t14.baidu.com/it/u=1520097008,1053818921&fm=58&app=83&size=w931&n=0&f=JPEG&fmt=auto?sec=1672592400&t=e209d56be06eeccc01a7e375264c0a0c",
-                  "thumbMode": "contain"
-                }
-              ],
-              "style": {
-                "flex": "0 0 auto",
-                "flexBasis": "250px",
-                "display": "block"
-              },
-              "id": "u:10875c0c5061"
-            },
-            {
-              "type": "flex",
-              "items": [
-                {
-                  "type": "wrapper",
-                  "size": "xs",
-                  "body": [
-                    {
-                      "type": "tpl",
-                      "tpl": "${movie_name}",
-                      "inline": true,
-                      "wrapperComponent": "",
-                      "id": "u:828ea8f4f1de",
-                      "style": {
-                        "fontFamily": "",
-                        "fontSize": 37,
-                        "fontWeight": "bold"
-                      }
-                    }
-                  ],
-                  "style": {
-                    "flex": "1 1 auto",
-                    "display": "block",
-                    "position": "static",
-                    "overflowX": "auto",
-                    "overflowY": "auto",
-                    "flexGrow": 1,
-                    "flexWrap": "nowrap",
-                    "flexBasis": "70px"
-                  },
-                  "id": "u:09751bc9d80e",
-                  "isFixedWidth": false
-                },
-                {
-                  "type": "wrapper",
-                  "body": [
-                    {
-                      "type": "input-rating",
-                      "name": "rating",
-                      "id": "u:c1d26e9caa8f",
-                      "count": 5,
-                      "value": 4,
-                      "half": true,
-                      "allowClear": false,
-                      "colors": {
-                        "2": "#abadb1",
-                        "3": "#787b81",
-                        "5": "#ffa900"
-                      },
-                      "texts": {
-                        "1": "很差",
-                        "2": "较差",
-                        "3": "一般",
-                        "4": "较好",
-                        "5": "很好"
-                      }
-                    }
-                  ],
-                  "size": "xs",
-                  "style": {
-                    "position": "static",
-                    "display": "block",
-                    "flex": "1 1 auto",
-                    "flexGrow": 1,
-                    "flexBasis": "auto"
-                  },
-                  "isFixedHeight": false,
-                  "isFixedWidth": false,
-                  "id": "u:517f071ca2f5"
-                },
-                {
-                  "type": "flex",
-                  "className": "p-1",
-                  "items": [
-                    {
-                      "type": "wrapper",
-                      "body": [
-                        {
-                          "type": "tpl",
-                          "tpl": "发行时间",
-                          "inline": true,
-                          "wrapperComponent": "",
-                          "id": "u:3a10ee997bc6",
-                          "style": {
-                            "fontFamily": "",
-                            "fontSize": 16,
-                            "color": "#000000"
-                          }
-                        }
-                      ],
-                      "size": "xs",
-                      "style": {
-                        "position": "static",
-                        "display": "block",
-                        "flex": "0 0 auto",
-                        "overflowX": "auto",
-                        "flexBasis": "150px"
-                      },
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:f41448f1091e"
-                    },
-                    {
-                      "type": "wrapper",
-                      "body": [
-                        {
-                          "type": "tpl",
-                          "tpl": "导演",
-                          "inline": true,
-                          "wrapperComponent": "",
-                          "id": "u:e68648fd8163",
-                          "style": {
-                            "fontFamily": "",
-                            "fontSize": 16,
-                            "color": "#000000"
-                          }
-                        }
-                      ],
-                      "size": "xs",
-                      "style": {
-                        "position": "static",
-                        "display": "block",
-                        "flex": "0 0 auto",
-                        "flexBasis": "150px",
-                        "overflowX": "auto"
-                      },
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:834a640837ea"
-                    },
-                    {
-                      "type": "wrapper",
-                      "body": [
-                        {
-                          "type": "tpl",
-                          "tpl": "语言",
-                          "inline": true,
-                          "wrapperComponent": "",
-                          "id": "u:ab5025eeb6b2",
-                          "style": {
-                            "fontFamily": "",
-                            "fontSize": 17,
-                            "color": "#000000"
-                          }
-                        }
-                      ],
-                      "size": "xs",
-                      "style": {
-                        "position": "static",
-                        "display": "block",
-                        "flex": "0 0 auto",
-                        "flexBasis": "150px",
-                        "overflowX": "auto"
-                      },
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:a1ffd608ce7c"
-                    }
-                  ],
-                  "style": {
-                    "position": "static"
-                  },
-                  "direction": "row",
-                  "justify": "flex-start",
-                  "alignItems": "stretch",
-                  "body": [
-                    {
-                      "type": "flex",
-                      "className": "p-1",
-                      "items": [
-                        {
-                          "type": "wrapper",
-                          "body": [
-                          ],
-                          "size": "xs",
-                          "style": {
-                            "position": "static",
-                            "display": "block",
-                            "flex": "1 1 auto",
-                            "flexGrow": 1,
-                            "flexBasis": "auto"
-                          },
-                          "isFixedHeight": false,
-                          "isFixedWidth": false
-                        },
-                        {
-                          "type": "wrapper",
-                          "body": [
-                          ],
-                          "size": "xs",
-                          "style": {
-                            "position": "static",
-                            "display": "block",
-                            "flex": "1 1 auto",
-                            "flexGrow": 1,
-                            "flexBasis": "auto"
-                          },
-                          "isFixedHeight": false,
-                          "isFixedWidth": false
-                        },
-                        {
-                          "type": "wrapper",
-                          "body": [
-                          ],
-                          "size": "xs",
-                          "style": {
-                            "position": "static",
-                            "display": "block",
-                            "flex": "1 1 auto",
-                            "flexGrow": 1,
-                            "flexBasis": "auto"
-                          },
-                          "isFixedHeight": false,
-                          "isFixedWidth": false
-                        }
-                      ],
-                      "style": {
+        (function() {
+            let amis = amisRequire('amis/embed');
+            // 通过替换下面这个配置来生成不同页面
+            let amisJSON = {
+                "type": "page",
+                "body": [{
+                    "type": "flex",
+                    "id": "u:8caaa828881b",
+                    "style": {
                         "position": "static"
-                      },
-                      "direction": "row",
-                      "justify": "flex-start",
-                      "alignItems": "stretch"
-                    }
-                  ],
-                  "id": "u:d5b9af2ef7e1"
-                },
-                {
-                  "type": "flex",
-                  "className": "p-1",
-                  "items": [
-                    {
-                      "type": "wrapper",
-                      "body": [
-                        {
-                          "type": "tpl",
-                          "tpl": "${movie_date}",
-                          "inline": true,
-                          "wrapperComponent": "",
-                          "id": "u:4aab028bf0c1",
-                          "style": {
-                            "color": "#4a90e2",
-                            "fontFamily": "",
-                            "fontSize": 16
-                          }
-                        }
-                      ],
-                      "size": "xs",
-                      "style": {
-                        "position": "static",
-                        "display": "block",
-                        "flex": "0 0 auto",
-                        "flexBasis": "150px",
-                        "overflowX": "auto"
-                      },
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:14a582b866e2"
                     },
-                    {
-                      "type": "wrapper",
-                      "body": [
-                        {
-                          "type": "tpl",
-                          "tpl": "${movie_director}",
-                          "inline": true,
-                          "wrapperComponent": "",
-                          "id": "u:b38b7f128b47",
-                          "style": {
-                            "color": "#4a90e2",
-                            "fontFamily": "",
-                            "fontSize": 16
-                          }
-                        }
-                      ],
-                      "size": "xs",
-                      "style": {
-                        "position": "static",
-                        "display": "block",
-                        "flex": "0 0 auto",
-                        "flexBasis": "150px",
-                        "overflowX": "auto"
-                      },
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:6ba6dd59a656"
-                    },
-                    {
-                      "type": "wrapper",
-                      "body": [
-                        {
-                          "type": "tpl",
-                          "tpl": "${movie_language}",
-                          "inline": true,
-                          "wrapperComponent": "",
-                          "id": "u:38f66f0d7cf1",
-                          "style": {
-                            "color": "#4a90e2",
-                            "fontFamily": "",
-                            "fontSize": 16
-                          }
-                        }
-                      ],
-                      "size": "xs",
-                      "style": {
-                        "position": "static",
-                        "display": "block",
-                        "flex": "0 0 auto",
-                        "flexBasis": "150px",
-                        "overflowX": "auto"
-                      },
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:eaf34c7698fe"
-                    }
-                  ],
-                  "style": {
-                    "position": "static"
-                  },
-                  "direction": "row",
-                  "justify": "flex-start",
-                  "alignItems": "stretch",
-                  "body": [
-                    {
-                      "type": "flex",
-                      "className": "p-1",
-                      "items": [
-                        {
-                          "type": "wrapper",
-                          "body": [
-                          ],
-                          "size": "xs",
-                          "style": {
+                    "className": "p-1",
+                    "items": [{
+                        "type": "wrapper",
+                        "body": [{
+                            "type": "button",
+                            "label": "返回",
+                            "onEvent": {
+                                "click": {
+                                    "actions": [{
+                                        "args": {
+                                            "url": "http://localhost:8081/homeuser.html"
+                                        },
+                                        "actionType": "url"
+                                    }]
+                                }
+                            },
+                            "id": "u:c9053cc9bb1c"
+                        }],
+                        "size": "xs",
+                        "style": {
                             "position": "static",
                             "display": "block",
                             "flex": "1 1 auto",
                             "flexGrow": 1,
                             "flexBasis": "auto"
-                          },
-                          "isFixedHeight": false,
-                          "isFixedWidth": false
                         },
-                        {
-                          "type": "wrapper",
-                          "body": [
-                          ],
-                          "size": "xs",
-                          "style": {
+                        "isFixedHeight": false,
+                        "isFixedWidth": false,
+                        "id": "u:5cbbbab1d8b1"
+                    }, {
+                        "type": "wrapper",
+                        "body": [],
+                        "size": "xs",
+                        "style": {
                             "position": "static",
                             "display": "block",
                             "flex": "1 1 auto",
                             "flexGrow": 1,
                             "flexBasis": "auto"
-                          },
-                          "isFixedHeight": false,
-                          "isFixedWidth": false
                         },
-                        {
-                          "type": "wrapper",
-                          "body": [
-                          ],
-                          "size": "xs",
-                          "style": {
+                        "isFixedHeight": false,
+                        "isFixedWidth": false,
+                        "id": "u:8e110c75bfab"
+                    }, {
+                        "type": "wrapper",
+                        "body": [],
+                        "size": "xs",
+                        "style": {
                             "position": "static",
                             "display": "block",
                             "flex": "1 1 auto",
                             "flexGrow": 1,
                             "flexBasis": "auto"
-                          },
-                          "isFixedHeight": false,
-                          "isFixedWidth": false
-                        }
-                      ],
-                      "style": {
+                        },
+                        "isFixedHeight": false,
+                        "isFixedWidth": false,
+                        "id": "u:2e8ce757cc4b"
+                    }],
+                    "direction": "row",
+                    "justify": "flex-start",
+                    "alignItems": "stretch"
+                }, {
+                    "type": "flex",
+                    "id": "u:2cac21772d51",
+                    "className": "p-1",
+                    "items": [{
+                        "type": "flex",
+                        "style": {
+                            "flex": "1 1 auto",
+                            "position": "static",
+                            "overflowX": "auto",
+                            "margin": "0",
+                            "maxWidth": "auto",
+                            "overflowY": "auto",
+                            "minWidth": "auto",
+                            "width": "auto",
+                            "maxHeight": "auto",
+                            "minHeight": "300px"
+                        },
+                        "isFixedHeight": false,
+                        "isFixedWidth": false,
+                        "id": "u:c037e2fe9cde",
+                        "items": [{
+                            "type": "wrapper",
+                            "size": "xs",
+                            "body": [{
+                                "type": "image",
+                                "id": "u:62279427091e",
+                                "width": 200,
+                                "height": 250,
+                                "src": "${movie_cover}",
+                                "thumbMode": "contain"
+                            }],
+                            "style": {
+                                "flex": "0 0 auto",
+                                "flexBasis": "250px",
+                                "display": "block"
+                            },
+                            "id": "u:10875c0c5061"
+                        }, {
+                            "type": "flex",
+                            "items": [{
+                                "type": "wrapper",
+                                "size": "xs",
+                                "body": [{
+                                    "type": "tpl",
+                                    "tpl": "${movie_name}",
+                                    "inline": true,
+                                    "wrapperComponent": "",
+                                    "id": "u:828ea8f4f1de",
+                                    "style": {
+                                        "fontFamily": "",
+                                        "fontSize": 37,
+                                        "fontWeight": "bold"
+                                    }
+                                }],
+                                "style": {
+                                    "flex": "1 1 auto",
+                                    "display": "block",
+                                    "position": "static",
+                                    "overflowX": "auto",
+                                    "overflowY": "auto",
+                                    "flexGrow": 1,
+                                    "flexWrap": "nowrap",
+                                    "flexBasis": "70px"
+                                },
+                                "id": "u:09751bc9d80e",
+                                "isFixedWidth": false
+                            }, {
+                                "type": "wrapper",
+                                "body": [{
+                                    "type": "input-rating",
+                                    "name": "rating",
+                                    "id": "u:c1d26e9caa8f",
+                                    "count": 5,
+                                    "value": "${movie_rating}",
+                                    "half": true,
+                                    "allowClear": false,
+                                    "colors": {
+                                        "2": "#abadb1",
+                                        "3": "#787b81",
+                                        "5": "#ffa900"
+                                    },
+                                    "texts": {
+                                        "1": "很差",
+                                        "2": "较差",
+                                        "3": "一般",
+                                        "4": "较好",
+                                        "5": "很好"
+                                    },
+                                    "readOnly": true
+                                }],
+                                "size": "xs",
+                                "style": {
+                                    "position": "static",
+                                    "display": "block",
+                                    "flex": "0 0 auto",
+                                    "flexBasis": "50px",
+                                    "overflowY": "auto"
+                                },
+                                "isFixedHeight": false,
+                                "isFixedWidth": false,
+                                "id": "u:517f071ca2f5"
+                            }, {
+                                "type": "wrapper",
+                                "body": [{
+                                    "type": "tpl",
+                                    "tpl": "${movie_introduction}",
+                                    "inline": true,
+                                    "wrapperComponent": "",
+                                    "id": "u:4f65682b35a9",
+                                    "style": {
+                                        "fontFamily": "",
+                                        "fontSize": 15
+                                    }
+                                }],
+                                "size": "xs",
+                                "style": {
+                                    "position": "static",
+                                    "display": "block",
+                                    "flex": "1 1 auto",
+                                    "overflowY": "auto",
+                                    "maxWidth": "500px",
+                                    "overflowX": "auto",
+                                    "flexGrow": 1,
+                                    "flexBasis": "auto"
+                                },
+                                "isFixedHeight": false,
+                                "isFixedWidth": false,
+                                "id": "u:aabe08673c9f"
+                            }, {
+                                "type": "flex",
+                                "className": "p-1",
+                                "items": [{
+                                    "type": "wrapper",
+                                    "body": [{
+                                        "type": "tpl",
+                                        "tpl": "发行时间",
+                                        "inline": true,
+                                        "wrapperComponent": "",
+                                        "id": "u:3a10ee997bc6",
+                                        "style": {
+                                            "fontFamily": "",
+                                            "fontSize": 16,
+                                            "color": "#000000"
+                                        },
+                                        "hidden": false
+                                    }],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "0 0 auto",
+                                        "overflowX": "auto",
+                                        "flexBasis": "150px"
+                                    },
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false,
+                                    "id": "u:f41448f1091e"
+                                }, {
+                                    "type": "wrapper",
+                                    "body": [{
+                                        "type": "tpl",
+                                        "tpl": "语言",
+                                        "inline": true,
+                                        "wrapperComponent": "",
+                                        "id": "u:ab5025eeb6b2",
+                                        "style": {
+                                            "fontFamily": "",
+                                            "fontSize": 17,
+                                            "color": "#000000"
+                                        }
+                                    }],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "0 0 auto",
+                                        "flexBasis": "150px",
+                                        "overflowX": "auto"
+                                    },
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false,
+                                    "id": "u:a1ffd608ce7c"
+                                }, {
+                                    "type": "wrapper",
+                                    "body": [{
+                                        "type": "tpl",
+                                        "tpl": "导演",
+                                        "inline": true,
+                                        "wrapperComponent": "",
+                                        "id": "u:3a10ee997bc6",
+                                        "style": {
+                                            "fontFamily": "",
+                                            "fontSize": 16,
+                                            "color": "#000000"
+                                        }
+                                    }],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "0 0 auto",
+                                        "overflowX": "auto",
+                                        "flexBasis": "150px"
+                                    },
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false,
+                                    "id": "u:f41448f1091e"
+                                }, {
+                                    "type": "wrapper",
+                                    "body": [{
+                                        "type": "tpl",
+                                        "tpl": "国家",
+                                        "inline": true,
+                                        "wrapperComponent": "",
+                                        "id": "u:3a10ee997bc6",
+                                        "style": {
+                                            "fontFamily": "",
+                                            "fontSize": 16,
+                                            "color": "#000000"
+                                        }
+                                    }],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "0 0 auto",
+                                        "overflowX": "auto",
+                                        "flexBasis": "150px"
+                                    },
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false,
+                                    "id": "u:f41448f1091e"
+                                }, {
+                                    "type": "wrapper",
+                                    "body": [{
+                                        "type": "tpl",
+                                        "tpl": "电影时长",
+                                        "inline": true,
+                                        "wrapperComponent": "",
+                                        "id": "u:3a10ee997bc6",
+                                        "style": {
+                                            "fontFamily": "",
+                                            "fontSize": 16,
+                                            "color": "#000000"
+                                        }
+                                    }],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "0 0 auto",
+                                        "overflowX": "auto",
+                                        "flexBasis": "150px"
+                                    },
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false,
+                                    "id": "u:f41448f1091e"
+                                }],
+                                "style": {
+                                    "position": "static"
+                                },
+                                "direction": "row",
+                                "justify": "flex-start",
+                                "alignItems": "stretch",
+                                "body": [{
+                                    "type": "flex",
+                                    "className": "p-1",
+                                    "items": [{
+                                        "type": "wrapper",
+                                        "body": [],
+                                        "size": "xs",
+                                        "style": {
+                                            "position": "static",
+                                            "display": "block",
+                                            "flex": "1 1 auto",
+                                            "flexGrow": 1,
+                                            "flexBasis": "auto"
+                                        },
+                                        "isFixedHeight": false,
+                                        "isFixedWidth": false
+                                    }, {
+                                        "type": "wrapper",
+                                        "body": [],
+                                        "size": "xs",
+                                        "style": {
+                                            "position": "static",
+                                            "display": "block",
+                                            "flex": "1 1 auto",
+                                            "flexGrow": 1,
+                                            "flexBasis": "auto"
+                                        },
+                                        "isFixedHeight": false,
+                                        "isFixedWidth": false
+                                    }, {
+                                        "type": "wrapper",
+                                        "body": [],
+                                        "size": "xs",
+                                        "style": {
+                                            "position": "static",
+                                            "display": "block",
+                                            "flex": "1 1 auto",
+                                            "flexGrow": 1,
+                                            "flexBasis": "auto"
+                                        },
+                                        "isFixedHeight": false,
+                                        "isFixedWidth": false
+                                    }],
+                                    "style": {
+                                        "position": "static"
+                                    },
+                                    "direction": "row",
+                                    "justify": "flex-start",
+                                    "alignItems": "stretch"
+                                }],
+                                "id": "u:d5b9af2ef7e1"
+                            }, {
+                                "type": "flex",
+                                "className": "p-1",
+                                "items": [{
+                                    "type": "wrapper",
+                                    "body": [{
+                                        "type": "tpl",
+                                        "tpl": "${movie_date}",
+                                        "inline": true,
+                                        "wrapperComponent": "",
+                                        "id": "u:4aab028bf0c1",
+                                        "style": {
+                                            "color": "#4a90e2",
+                                            "fontFamily": "",
+                                            "fontSize": 16
+                                        }
+                                    }],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "0 0 auto",
+                                        "flexBasis": "150px",
+                                        "overflowX": "auto"
+                                    },
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false,
+                                    "id": "u:14a582b866e2"
+                                }, {
+                                    "type": "wrapper",
+                                    "body": [{
+                                        "type": "tpl",
+                                        "tpl": "${movie_language}",
+                                        "inline": true,
+                                        "wrapperComponent": "",
+                                        "id": "u:38f66f0d7cf1",
+                                        "style": {
+                                            "color": "#4a90e2",
+                                            "fontFamily": "",
+                                            "fontSize": 16
+                                        }
+                                    }],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "0 0 auto",
+                                        "flexBasis": "150px",
+                                        "overflowX": "auto"
+                                    },
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false,
+                                    "id": "u:eaf34c7698fe"
+                                }, {
+                                    "type": "wrapper",
+                                    "body": [{
+                                        "type": "tpl",
+                                        "tpl": "${movie_director}",
+                                        "inline": true,
+                                        "wrapperComponent": "",
+                                        "id": "u:235fc7d31b58",
+                                        "style": {
+                                            "color": "#4a90e2",
+                                            "fontFamily": "",
+                                            "fontSize": 16
+                                        }
+                                    }],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "0 0 auto",
+                                        "flexBasis": "150px",
+                                        "overflowX": "auto"
+                                    },
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false,
+                                    "id": "u:6218d03bb311"
+                                }, {
+                                    "type": "wrapper",
+                                    "body": [{
+                                        "type": "tpl",
+                                        "tpl": "${movie_country}",
+                                        "inline": true,
+                                        "wrapperComponent": "",
+                                        "id": "u:ff0040d30897",
+                                        "style": {
+                                            "color": "#4a90e2",
+                                            "fontFamily": "",
+                                            "fontSize": 16
+                                        }
+                                    }],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "0 0 auto",
+                                        "flexBasis": "150px",
+                                        "overflowX": "auto"
+                                    },
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false,
+                                    "id": "u:8d2a46f6456f"
+                                }, {
+                                    "type": "wrapper",
+                                    "body": [{
+                                        "type": "tpl",
+                                        "tpl": "${movie_length}",
+                                        "inline": true,
+                                        "wrapperComponent": "",
+                                        "id": "u:1530cedf3486",
+                                        "style": {
+                                            "color": "#4a90e2",
+                                            "fontFamily": "",
+                                            "fontSize": 16
+                                        }
+                                    }],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "0 0 auto",
+                                        "flexBasis": "150px",
+                                        "overflowX": "auto"
+                                    },
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false,
+                                    "id": "u:40f7ec38d49b"
+                                }],
+                                "style": {
+                                    "position": "static"
+                                },
+                                "direction": "row",
+                                "justify": "flex-start",
+                                "alignItems": "stretch",
+                                "body": [{
+                                    "type": "flex",
+                                    "className": "p-1",
+                                    "items": [{
+                                        "type": "wrapper",
+                                        "body": [],
+                                        "size": "xs",
+                                        "style": {
+                                            "position": "static",
+                                            "display": "block",
+                                            "flex": "1 1 auto",
+                                            "flexGrow": 1,
+                                            "flexBasis": "auto"
+                                        },
+                                        "isFixedHeight": false,
+                                        "isFixedWidth": false
+                                    }, {
+                                        "type": "wrapper",
+                                        "body": [],
+                                        "size": "xs",
+                                        "style": {
+                                            "position": "static",
+                                            "display": "block",
+                                            "flex": "1 1 auto",
+                                            "flexGrow": 1,
+                                            "flexBasis": "auto"
+                                        },
+                                        "isFixedHeight": false,
+                                        "isFixedWidth": false
+                                    }, {
+                                        "type": "wrapper",
+                                        "body": [],
+                                        "size": "xs",
+                                        "style": {
+                                            "position": "static",
+                                            "display": "block",
+                                            "flex": "1 1 auto",
+                                            "flexGrow": 1,
+                                            "flexBasis": "auto"
+                                        },
+                                        "isFixedHeight": false,
+                                        "isFixedWidth": false
+                                    }],
+                                    "style": {
+                                        "position": "static"
+                                    },
+                                    "direction": "row",
+                                    "justify": "flex-start",
+                                    "alignItems": "stretch"
+                                }, {
+                                    "type": "container",
+                                    "body": [],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "1 1 auto",
+                                        "flexGrow": 1,
+                                        "flexBasis": "auto"
+                                    },
+                                    "wrapperBody": false,
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false
+                                }, {
+                                    "type": "container",
+                                    "body": [],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "1 1 auto",
+                                        "flexGrow": 1,
+                                        "flexBasis": "auto"
+                                    },
+                                    "wrapperBody": false,
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false
+                                }, {
+                                    "type": "container",
+                                    "body": [],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "1 1 auto",
+                                        "flexGrow": 1,
+                                        "flexBasis": "auto"
+                                    },
+                                    "wrapperBody": false,
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false
+                                }, {
+                                    "type": "container",
+                                    "body": [],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "1 1 auto",
+                                        "flexGrow": 1,
+                                        "flexBasis": "auto"
+                                    },
+                                    "wrapperBody": false,
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false
+                                }, {
+                                    "type": "container",
+                                    "body": [],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "1 1 auto",
+                                        "flexGrow": 1,
+                                        "flexBasis": "auto"
+                                    },
+                                    "wrapperBody": false,
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false
+                                }, {
+                                    "type": "container",
+                                    "body": [],
+                                    "size": "xs",
+                                    "style": {
+                                        "position": "static",
+                                        "display": "block",
+                                        "flex": "1 1 auto",
+                                        "flexGrow": 1,
+                                        "flexBasis": "auto"
+                                    },
+                                    "wrapperBody": false,
+                                    "isFixedHeight": false,
+                                    "isFixedWidth": false
+                                }],
+                                "id": "u:023e874bbd4c"
+                            }, {
+                                "type": "wrapper",
+                                "body": [{
+                                    "type": "tpl",
+                                    "tpl": "标签",
+                                    "inline": true,
+                                    "wrapperComponent": "",
+                                    "id": "u:ba6d5312b6ab",
+                                    "style": {
+                                        "fontFamily": "",
+                                        "fontSize": 21,
+                                        "fontWeight": "bold"
+                                    }
+                                }],
+                                "size": "xs",
+                                "style": {
+                                    "position": "static",
+                                    "display": "block",
+                                    "flex": "1 1 auto",
+                                    "flexGrow": 1,
+                                    "flexBasis": "auto"
+                                },
+                                "isFixedHeight": false,
+                                "isFixedWidth": false,
+                                "id": "u:51c5c89494b1"
+                            }, {
+                                "type": "wrapper",
+                                "body": [{
+                                    "type": "tag",
+                                    "label": "${movie_tag[0]}",
+                                    "displayMode": "rounded",
+                                    "color": "#4096ff",
+                                    "id": "u:afaaf25cb049"
+                                }, {
+                                    "type": "tag",
+                                    "label": "${movie_tag[1]}",
+                                    "displayMode": "rounded",
+                                    "color": "#4096ff",
+                                    "id": "u:25e30cb2eddf",
+                                }, {
+                                    "type": "tag",
+                                    "label": "${movie_tag[2]}",
+                                    "displayMode": "rounded",
+                                    "color": "#4096ff",
+                                    "id": "u:25e30cb2eddf",
+                                }, {
+                                    "type": "tag",
+                                    "label": "${movie_tag[3]}",
+                                    "displayMode": "rounded",
+                                    "color": "#4096ff",
+                                    "id": "u:25e30cb2eddf",
+                                }],
+                                "size": "xs",
+                                "style": {
+                                    "position": "static",
+                                    "display": "block",
+                                    "flex": "1 1 auto",
+                                    "flexGrow": 1,
+                                    "flexBasis": "auto"
+                                },
+                                "isFixedHeight": false,
+                                "isFixedWidth": false,
+                                "id": "u:e8734644d7b9"
+                            }],
+                            "style": {
+                                "position": "static",
+                                "overflowX": "auto",
+                                "overflowY": "auto",
+                                "margin": "0",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto"
+                            },
+                            "alignItems": "stretch",
+                            "direction": "column",
+                            "justify": "center",
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:3ee86c0dea26"
+                        }],
+                        "direction": "row",
+                        "justify": "flex-start",
+                        "alignItems": "stretch"
+                    }],
+                    "direction": "column",
+                    "justify": "center",
+                    "alignItems": "stretch"
+                }, {
+                    "type": "flex",
+                    "style": {
                         "position": "static"
-                      },
-                      "direction": "row",
-                      "justify": "flex-start",
-                      "alignItems": "stretch"
-                    }
-                  ],
-                  "id": "u:023e874bbd4c"
-                },
-                {
-                  "type": "wrapper",
-                  "body": [
-                    {
-                      "type": "tpl",
-                      "tpl": "标签",
-                      "inline": true,
-                      "wrapperComponent": "",
-                      "id": "u:ba6d5312b6ab",
-                      "style": {
-                        "fontFamily": "",
-                        "fontSize": 21,
-                        "fontWeight": "bold"
-                      }
-                    }
-                  ],
-                  "size": "xs",
-                  "style": {
-                    "position": "static",
-                    "display": "block",
-                    "flex": "1 1 auto",
-                    "flexGrow": 1,
-                    "flexBasis": "auto"
-                  },
-                  "isFixedHeight": false,
-                  "isFixedWidth": false,
-                  "id": "u:51c5c89494b1"
-                },
-                {
-                  "type": "wrapper",
-                  "body": [
-                    {
-                      "type": "tag",
-                      "label": "${movie_tag[0]}",
-                      "displayMode": "rounded",
-                      "color": "#4096ff",
-                      "id": "u:afaaf25cb049"
                     },
-                    {
-                      "type": "tag",
-                      "label": "${movie_tag[1]}",
-                      "displayMode": "rounded",
-                      "color": "#4096ff",
-                      "id": "u:25e30cb2eddf"
-                    }
-                  ],
-                  "size": "xs",
-                  "style": {
-                    "position": "static",
-                    "display": "block",
-                    "flex": "1 1 auto",
-                    "flexGrow": 1,
-                    "flexBasis": "auto"
-                  },
-                  "isFixedHeight": false,
-                  "isFixedWidth": false,
-                  "id": "u:e8734644d7b9"
+                    "id": "u:0c967ec87b3c",
+                    "className": "p-1",
+                    "items": [{
+                        "type": "wrapper",
+                        "body": [],
+                        "size": "xs",
+                        "style": {
+                            "position": "static",
+                            "display": "block",
+                            "flex": "1 1 auto",
+                            "flexGrow": 1,
+                            "flexBasis": "auto"
+                        },
+                        "isFixedHeight": false,
+                        "isFixedWidth": false,
+                        "id": "u:fc44560afc96"
+                    }, {
+                        "type": "wrapper",
+                        "body": [],
+                        "size": "xs",
+                        "style": {
+                            "position": "static",
+                            "display": "block",
+                            "flex": "1 1 auto",
+                            "flexGrow": 1,
+                            "flexBasis": "auto"
+                        },
+                        "isFixedHeight": false,
+                        "isFixedWidth": false,
+                        "id": "u:121877f2db68"
+                    }, {
+                        "type": "wrapper",
+                        "body": [],
+                        "size": "xs",
+                        "style": {
+                            "position": "static",
+                            "display": "block",
+                            "flex": "1 1 auto",
+                            "flexGrow": 1,
+                            "flexBasis": "auto"
+                        },
+                        "isFixedHeight": false,
+                        "isFixedWidth": false,
+                        "id": "u:85d01af401a9"
+                    }, {
+                        "type": "wrapper",
+                        "body": [],
+                        "size": "xs",
+                        "style": {
+                            "position": "static",
+                            "display": "block",
+                            "flex": "1 1 auto",
+                            "flexGrow": 1,
+                            "flexBasis": "auto"
+                        },
+                        "isFixedHeight": false,
+                        "isFixedWidth": false,
+                        "id": "u:f95c9a747db9"
+                    }, {
+                        "type": "wrapper",
+                        "body": [],
+                        "size": "xs",
+                        "style": {
+                            "position": "static",
+                            "display": "block",
+                            "flex": "1 1 auto",
+                            "flexGrow": 1,
+                            "flexBasis": "auto"
+                        },
+                        "isFixedHeight": false,
+                        "isFixedWidth": false,
+                        "id": "u:2afb4ea5286b"
+                    }],
+                    "direction": "row",
+                    "justify": "flex-start",
+                    "alignItems": "stretch"
+                }],
+                "id": "u:7a9775863e8e",
+                "initApi": {
+                    "url": "http://localhost:8082/showMovies",
+                    "method": "post",
+                    "data": {
+                        "movie_id": "${movie_id}"
+                    },
+                    "messages": {}
                 }
-              ],
-              "style": {
-                "position": "static",
-                "overflowX": "auto",
-                "overflowY": "auto",
-                "margin": "0",
-                "flex": "1 1 auto",
-                "flexGrow": 1,
-                "flexBasis": "auto"
-              },
-              "alignItems": "stretch",
-              "direction": "column",
-              "justify": "center",
-              "isFixedHeight": false,
-              "isFixedWidth": false,
-              "id": "u:3ee86c0dea26"
-            }
-          ],
-          "style": {
-            "flex": "1 1 auto",
-            "overflowX": "auto",
-            "margin": "0",
-            "maxWidth": "auto",
-            "overflowY": "auto",
-            "position": "static",
-            "minWidth": "auto",
-            "width": "auto",
-            "maxHeight": "auto",
-            "minHeight": "300px"
-          },
-          "direction": "row",
-          "justify": "flex-start",
-          "alignItems": "stretch",
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:c037e2fe9cde"
-        }
-      ],
-      "direction": "column",
-      "justify": "center",
-      "alignItems": "stretch",
-      "id": "u:2cac21772d51"
-    },
-    {
-      "type": "flex",
-      "className": "p-1",
-      "items": [
-        {
-          "type": "tpl",
-          "tpl": "相似的电影",
-          "inline": true,
-          "wrapperComponent": "",
-          "id": "u:039d87620cbe",
-          "style": {
-            "fontFamily": "",
-            "fontSize": 21,
-            "fontWeight": "bold"
-          }
-        }
-      ],
-      "style": {
-        "position": "static"
-      },
-      "direction": "row",
-      "justify": "flex-start",
-      "alignItems": "stretch",
-      "id": "u:dcecd81ee91d"
-    },
-    {
-      "type": "flex",
-      "className": "p-1",
-      "items": [
-        {
-          "type": "wrapper",
-          "body": [
-            {
-              "type": "image",
-              "id": "u:a84e7a22bfe9",
-              "width": 200,
-              "height": 250
-            }
-          ],
-          "size": "xs",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 1,
-            "flexBasis": "auto"
-          },
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:fc44560afc96"
-        },
-        {
-          "type": "wrapper",
-          "body": [
-            {
-              "type": "image",
-              "id": "u:4799d6e1bf39",
-              "width": 200,
-              "height": 250
-            }
-          ],
-          "size": "xs",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 1,
-            "flexBasis": "auto"
-          },
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:121877f2db68"
-        },
-        {
-          "type": "wrapper",
-          "body": [
-            {
-              "type": "image",
-              "id": "u:826f36ca1945",
-              "width": 200,
-              "height": 250
-            }
-          ],
-          "size": "xs",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 1,
-            "flexBasis": "auto"
-          },
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:85d01af401a9"
-        },
-        {
-          "type": "wrapper",
-          "body": [
-            {
-              "type": "image",
-              "id": "u:5208c959beb6",
-              "width": 200,
-              "height": 250
-            }
-          ],
-          "size": "xs",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 1,
-            "flexBasis": "auto"
-          },
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:f95c9a747db9"
-        },
-        {
-          "type": "wrapper",
-          "body": [
-            {
-              "type": "image",
-              "id": "u:5633ef2c6119",
-              "width": 200,
-              "height": 250
-            }
-          ],
-          "size": "xs",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 1,
-            "flexBasis": "auto"
-          },
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:2afb4ea5286b"
-        }
-      ],
-      "style": {
-        "position": "static"
-      },
-      "direction": "row",
-      "justify": "flex-start",
-      "alignItems": "stretch",
-      "id": "u:0c967ec87b3c"
-    }
-  ],
-  "id": "u:ef73b9fdaefd",
-  "data": {
-    "movie_name": "肖申克的救赎",
-    "movie_date": "2000.11.21",
-    "movie_director": "David",
-    "movie_language": "英语",
-    "movie_tag": [
-      "荔枝",
-      "小黑子"
-    ]
-  }
-};
-        let amisScoped = amis.embed('#root', amisJSON);
-      })();
+            };
+            let amisScoped = amis.embed('#root', amisJSON);
+        })();
     </script>
-  </body>
+</body>
+
 </html>

@@ -1,7 +1,7 @@
 # Development!
 # ART0189
 
-from AppStartDataBase import CUser, CMovie, CCustomUser, CMovieTag
+from AppStartDataBase import CCustomUser, CUser, CMovie, CMovieTag
 
 # Other data-write operations are not recommandable.
 # Most data-read operation need be implemented manually.
@@ -28,7 +28,6 @@ def InsertUser(UserId, UserPassword, UserPreferenceMap, UserRecommandMap):
         raise Exception("Invalid user insert!", UserObject)
     return Result.acknowledged
 
-
 def UpdateUserRecommand(UserId, NewUserRecommandList):
     Query = {"UID": UserId}
     Result = CUser.find_one(Query)
@@ -53,12 +52,17 @@ def InsertMovie(MovieId, MovieLatUpdateTime, MovieAvgRating, MovieRatingCnt, IMD
     return Result.acknowledged
 
 
-def InsertCustomUser(CustomUserId):
-    CustomUserObject = {"CUID": CustomUserId, "MatchedUID": -1}
+def InsertCustomUser(CustomUserId, CustomUserPwd):
+    CustomUserObject = {"CUID": CustomUserId, "CPwd": CustomUserPwd, "MatchedUID": -1}
     Result = CCustomUser.insert_one(CustomUserObject)
     if DebugDBOp and not Result.acknowledged:
         raise Exception("Invalid custom user insert!", CustomUserObject)
     return Result.acknowledged
+
+def ReadCustomUserPwd(CustomUserId):
+    Query = {"CUID": CustomUserId}
+    Result = CCustomUser.find_one(Query)
+    return Result['CPwd'] if Result is not None else None
 
 
 def UpdateCustomUser(CustomUserId, CustomTags):
@@ -99,6 +103,7 @@ def MatchExistedUser(CustomTags):
                 bAllMatched = False
                 break
         if bAllMatched:
+            print(f'matched user {i} for incoming register')
             return i
 
     raise Exception("Can not find suitable user to match!")

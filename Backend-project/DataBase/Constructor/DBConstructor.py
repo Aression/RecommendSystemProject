@@ -14,16 +14,15 @@ def ConstructAll():
     # ConstructMovieTags()
     pass
 
-
 def ConstructRecommend():
     filename = 'D:\GITHUB-DESKTOP\RecommendSystemProject\Backend-project\DataBase\Constructor\Data\handeled_recommend.csv'
     data = pd.read_csv(f'{filename}')
     for index, row in data.iterrows():
         DBFL.UpdateUserRecommand(row['userIdInt'], eval(row['recommendations']))
+        print(f'{index}th user recommend complete')
 
 
 # Construct users from ratings{userId,movieId,rating,timestamp}
-# Assume Pwd=123456
 def ConstructUser():
     LastId = 1
     PreferMovies = []

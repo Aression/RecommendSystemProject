@@ -1,1158 +1,435 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <title>amis demo</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <link rel="stylesheet" href="./sdk/sdk.css" />
-    <link rel="stylesheet" href="./sdk/helper.css" />
-    <link rel="stylesheet" href="./sdk/iconfont.css" />
-    <!-- 这是默认主题所需的，如果是其他主题则不需要 -->
-    <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
-    <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
-    <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
-    <style>
-      html,
-      body,
-      .app-wrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root" class="app-wrapper"></div>
-    <script src="./sdk/sdk.js"></script>
-    <script type="text/javascript">
-      (function () {
-        let amis = amisRequire('amis/embed');
-        // 通过替换下面这个配置来生成不同页面
-        let amisJSON = {
-  "type": "page",
-  "body": [
-    {
-      "type": "flex",
-      "className": "p-1",
-      "items": [
-        {
-          "type": "wrapper",
-          "body": [
-            {
-              "type": "flex",
-              "className": "p-1",
-              "items": [
-                {
-                  "type": "wrapper",
-                  "size": "xs",
-                  "body": [
-                    {
-                      "type": "breadcrumb",
-                      "items": [
-                        {
-                          "label": "首页",
-                          "href": "https://www.baidu.com/",
-                          "icon": "fa fa-home"
-                        },
-                        {
-                          "label": "当前页面"
-                        }
-                      ],
-                      "id": "u:8bd0c40203d0"
-                    }
-                  ],
-                  "style": {
-                    "flex": "0 0 auto",
-                    "display": "block"
-                  },
-                  "id": "u:bb41e0f94645"
-                },
-                {
-                  "type": "flex",
-                  "items": [
-                    {
-                      "type": "wrapper",
-                      "size": "xs",
-                      "body": [
-                        {
-                          "type": "image",
-                          "id": "u:38fbeab9a314",
-                          "showDimensions": true,
-                          "width": 200,
-                          "height": 250,
-                          "thumbRatio": "16:9",
-                          "src": "https://t14.baidu.com/it/u=2748852643,119719483&fm=58&app=83&size=w931&n=0&f=JPEG&fmt=auto?sec=1672592400&t=99cf45758d9ac10f4ca1f6d0776eb962"
-                        }
-                      ],
-                      "style": {
-                        "flex": "0 0 auto",
-                        "flexBasis": "250px",
-                        "display": "block"
-                      },
-                      "id": "u:36078214af33"
-                    },
-                    {
-                      "type": "flex",
-                      "items": [
-                        {
-                          "type": "wrapper",
-                          "size": "xs",
-                          "body": [
-                            {
-                              "type": "tpl",
-                              "tpl": "电影名",
-                              "inline": true,
-                              "wrapperComponent": "",
-                              "id": "u:fb17f098edd0",
-                              "style": {
-                                "fontFamily": "",
-                                "fontSize": 48,
-                                "fontWeight": "bold"
-                              }
-                            }
-                          ],
-                          "style": {
-                            "flex": "1 1 auto",
-                            "flexBasis": "auto",
-                            "flexGrow": 1,
-                            "display": "block"
-                          },
-                          "id": "u:46e206c17844"
-                        },
-                        {
-                          "type": "wrapper",
-                          "size": "xs",
-                          "body": [
-                            {
-                              "type": "input-rating",
-                              "label": "",
-                              "name": "rating",
-                              "id": "u:7450c046d7c8",
-                              "allowClear": false,
-                              "half": true,
-                              "colors": {
-                                "2": "#abadb1",
-                                "3": "#787b81",
-                                "5": "#ffa900"
-                              },
-                              "texts": {
-                                "1": "很差",
-                                "2": "较差",
-                                "3": "一般",
-                                "4": "较好",
-                                "5": "很好"
-                              },
-                              "value": 5,
-                              "count": 5
-                            }
-                          ],
-                          "style": {
-                            "flex": "1 1 auto",
-                            "flexBasis": "auto",
-                            "flexGrow": 1,
-                            "display": "block"
-                          },
-                          "id": "u:5a90ce86836d"
-                        },
-                        {
-                          "type": "wrapper",
-                          "body": [
-                            {
-                              "type": "flex",
-                              "className": "p-1",
-                              "items": [
-                                {
-                                  "type": "wrapper",
-                                  "body": [
-                                    {
-                                      "type": "flex",
-                                      "className": "p-1",
-                                      "items": [
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                            {
-                                              "type": "tpl",
-                                              "tpl": "发行时间",
-                                              "inline": true,
-                                              "wrapperComponent": "",
-                                              "id": "u:8568858c3342"
-                                            }
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:c1f8c140e056"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:eea9fd8a38e2"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:65e3229413c1"
-                                        }
-                                      ],
-                                      "style": {
-                                        "position": "static"
-                                      },
-                                      "direction": "row",
-                                      "justify": "flex-start",
-                                      "alignItems": "stretch",
-                                      "id": "u:6125cdacf1e3"
-                                    },
-                                    {
-                                      "type": "flex",
-                                      "className": "p-1",
-                                      "items": [
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                            {
-                                              "type": "tpl",
-                                              "tpl": " xxx年xx月xx日",
-                                              "inline": true,
-                                              "wrapperComponent": "",
-                                              "id": "u:436f7f12d24c"
-                                            }
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:a1880aec0035"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:32b178952bdf"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:0b058e2105f1"
-                                        }
-                                      ],
-                                      "style": {
-                                        "position": "static"
-                                      },
-                                      "direction": "row",
-                                      "justify": "flex-start",
-                                      "alignItems": "stretch",
-                                      "id": "u:24f155ddf0e3"
-                                    }
-                                  ],
-                                  "size": "xs",
-                                  "style": {
-                                    "position": "static",
-                                    "display": "block",
-                                    "flex": "1 1 auto",
-                                    "flexGrow": 1,
-                                    "flexBasis": "auto"
-                                  },
-                                  "isFixedHeight": false,
-                                  "isFixedWidth": false,
-                                  "id": "u:670a5ea7c906"
-                                },
-                                {
-                                  "type": "wrapper",
-                                  "body": [
-                                    {
-                                      "type": "flex",
-                                      "className": "p-1",
-                                      "items": [
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                            {
-                                              "type": "tpl",
-                                              "tpl": "导演",
-                                              "inline": true,
-                                              "wrapperComponent": "",
-                                              "id": "u:ef3803f46a49"
-                                            }
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:faed62631944"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:97afcd7ec7bd"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:2a7a76b15136"
-                                        }
-                                      ],
-                                      "style": {
-                                        "position": "static"
-                                      },
-                                      "direction": "row",
-                                      "justify": "flex-start",
-                                      "alignItems": "stretch",
-                                      "id": "u:f241620e7d5d"
-                                    },
-                                    {
-                                      "type": "flex",
-                                      "className": "p-1",
-                                      "items": [
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                            {
-                                              "type": "tpl",
-                                              "tpl": "xx",
-                                              "inline": true,
-                                              "wrapperComponent": "",
-                                              "id": "u:652b25d11abd"
-                                            }
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:79859c286946"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:551c06eb4b87"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:63cda0e3da54"
-                                        }
-                                      ],
-                                      "style": {
-                                        "position": "static"
-                                      },
-                                      "direction": "row",
-                                      "justify": "flex-start",
-                                      "alignItems": "stretch",
-                                      "id": "u:e84151a56812"
-                                    }
-                                  ],
-                                  "size": "xs",
-                                  "style": {
-                                    "position": "static",
-                                    "display": "block",
-                                    "flex": "1 1 auto",
-                                    "flexGrow": 1,
-                                    "flexBasis": "auto"
-                                  },
-                                  "isFixedHeight": false,
-                                  "isFixedWidth": false,
-                                  "id": "u:5f74ec1dbc6f"
-                                },
-                                {
-                                  "type": "wrapper",
-                                  "body": [
-                                    {
-                                      "type": "flex",
-                                      "className": "p-1",
-                                      "items": [
-                                        {
-                                          "type": "wrapper",
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:363dc84b3a5a"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                            {
-                                              "type": "tpl",
-                                              "tpl": "语言",
-                                              "inline": true,
-                                              "wrapperComponent": "",
-                                              "id": "u:d03d6351b494"
-                                            }
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:d7b918caf5b4"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:7af1381efd66"
-                                        }
-                                      ],
-                                      "style": {
-                                        "position": "static"
-                                      },
-                                      "direction": "row",
-                                      "justify": "flex-start",
-                                      "alignItems": "stretch",
-                                      "id": "u:42622d7ad27d"
-                                    },
-                                    {
-                                      "type": "flex",
-                                      "className": "p-1",
-                                      "items": [
-                                        {
-                                          "type": "wrapper",
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:4fe4945aee63"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                            {
-                                              "type": "tpl",
-                                              "tpl": "xx",
-                                              "inline": true,
-                                              "wrapperComponent": "",
-                                              "id": "u:15aaf0e154f4"
-                                            }
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:12f9c35328fb"
-                                        },
-                                        {
-                                          "type": "wrapper",
-                                          "body": [
-                                          ],
-                                          "size": "xs",
-                                          "style": {
-                                            "position": "static",
-                                            "display": "block",
-                                            "flex": "1 1 auto",
-                                            "flexGrow": 1,
-                                            "flexBasis": "auto"
-                                          },
-                                          "isFixedHeight": false,
-                                          "isFixedWidth": false,
-                                          "id": "u:e67e1b7630c8"
-                                        }
-                                      ],
-                                      "style": {
-                                        "position": "static"
-                                      },
-                                      "direction": "row",
-                                      "justify": "flex-start",
-                                      "alignItems": "stretch",
-                                      "id": "u:1ab22bc22776"
-                                    }
-                                  ],
-                                  "size": "xs",
-                                  "style": {
-                                    "position": "static",
-                                    "display": "block",
-                                    "flex": "1 1 auto",
-                                    "flexGrow": 1,
-                                    "flexBasis": "auto"
-                                  },
-                                  "isFixedHeight": false,
-                                  "isFixedWidth": false,
-                                  "id": "u:b3cad4dd6ff6"
-                                },
-                                {
-                                  "type": "wrapper",
-                                  "body": [
-                                  ],
-                                  "size": "xs",
-                                  "style": {
-                                    "position": "static",
-                                    "display": "block",
-                                    "flex": "1 1 auto",
-                                    "flexGrow": 1,
-                                    "flexBasis": "auto"
-                                  },
-                                  "isFixedHeight": false,
-                                  "isFixedWidth": false,
-                                  "id": "u:b2afdab5c8f4"
-                                },
-                                {
-                                  "type": "wrapper",
-                                  "body": [
-                                  ],
-                                  "size": "xs",
-                                  "style": {
-                                    "position": "static",
-                                    "display": "block",
-                                    "flex": "1 1 auto",
-                                    "flexGrow": 1,
-                                    "flexBasis": "auto"
-                                  },
-                                  "isFixedHeight": false,
-                                  "isFixedWidth": false,
-                                  "id": "u:178016bec535"
-                                },
-                                {
-                                  "type": "wrapper",
-                                  "body": [
-                                  ],
-                                  "size": "xs",
-                                  "style": {
-                                    "position": "static",
-                                    "display": "block",
-                                    "flex": "1 1 auto",
-                                    "flexGrow": 1,
-                                    "flexBasis": "auto"
-                                  },
-                                  "isFixedHeight": false,
-                                  "isFixedWidth": false,
-                                  "id": "u:eaa028389213"
-                                },
-                                {
-                                  "type": "wrapper",
-                                  "body": [
-                                  ],
-                                  "size": "xs",
-                                  "style": {
-                                    "position": "static",
-                                    "display": "block",
-                                    "flex": "1 1 auto",
-                                    "flexGrow": 1,
-                                    "flexBasis": "auto"
-                                  },
-                                  "isFixedHeight": false,
-                                  "isFixedWidth": false,
-                                  "id": "u:31177e687c35"
-                                },
-                                {
-                                  "type": "wrapper",
-                                  "body": [
-                                  ],
-                                  "size": "xs",
-                                  "style": {
-                                    "position": "static",
-                                    "display": "block",
-                                    "flex": "1 1 auto",
-                                    "flexGrow": 1,
-                                    "flexBasis": "auto"
-                                  },
-                                  "isFixedHeight": false,
-                                  "isFixedWidth": false,
-                                  "id": "u:56b1ef52f33c"
-                                },
-                                {
-                                  "type": "wrapper",
-                                  "body": [
-                                  ],
-                                  "size": "xs",
-                                  "style": {
-                                    "position": "static",
-                                    "display": "block",
-                                    "flex": "1 1 auto",
-                                    "flexGrow": 1,
-                                    "flexBasis": "auto"
-                                  },
-                                  "isFixedHeight": false,
-                                  "isFixedWidth": false,
-                                  "id": "u:7b75515401f4"
-                                },
-                                {
-                                  "type": "wrapper",
-                                  "body": [
-                                  ],
-                                  "size": "xs",
-                                  "style": {
-                                    "position": "static",
-                                    "display": "block",
-                                    "flex": "1 1 auto",
-                                    "flexGrow": 1,
-                                    "flexBasis": "auto"
-                                  },
-                                  "isFixedHeight": false,
-                                  "isFixedWidth": false,
-                                  "id": "u:deba7a44e45a"
-                                },
-                                {
-                                  "type": "wrapper",
-                                  "body": [
-                                  ],
-                                  "size": "xs",
-                                  "style": {
-                                    "position": "static",
-                                    "display": "block",
-                                    "flex": "1 1 auto",
-                                    "flexGrow": 1,
-                                    "flexBasis": "auto"
-                                  },
-                                  "isFixedHeight": false,
-                                  "isFixedWidth": false,
-                                  "id": "u:b17fd97e1c22"
-                                }
-                              ],
-                              "style": {
-                                "position": "static"
-                              },
-                              "direction": "row",
-                              "justify": "flex-start",
-                              "alignItems": "stretch",
-                              "id": "u:6339d52e0440"
-                            }
-                          ],
-                          "size": "xs",
-                          "style": {
-                            "position": "static",
-                            "display": "block",
-                            "flex": "1 1 auto",
-                            "flexGrow": 1,
-                            "flexBasis": "auto"
-                          },
-                          "isFixedHeight": false,
-                          "isFixedWidth": false,
-                          "id": "u:f7fce297fbc2"
-                        },
-                        {
-                          "type": "wrapper",
-                          "body": [
-                            {
-                              "type": "tpl",
-                              "tpl": "这是电影的简介（The defense and the prosecution have rested and the jury is filing into the jury room to decide if a young Spanish-American is guilty or innocent of murdering his father. What begins as an open and shut case soon becomes a mini-drama of each of the jurors' prejudices and preconceptions about the trial, the accused, and each other.）",
-                              "inline": true,
-                              "wrapperComponent": "",
-                              "id": "u:d6ec12a72c84",
-                              "style": {
-                                "fontFamily": "",
-                                "fontSize": 18,
-                                "textAlign": "left"
-                              }
-                            }
-                          ],
-                          "size": "xs",
-                          "style": {
-                            "position": "static",
-                            "display": "block",
-                            "flex": "1 1 auto",
-                            "flexGrow": 1,
-                            "flexBasis": "auto"
-                          },
-                          "isFixedHeight": false,
-                          "isFixedWidth": false,
-                          "id": "u:3c9ae06efc21"
-                        },
-                        {
-                          "type": "wrapper",
-                          "body": [
-                            {
-                              "type": "tpl",
-                              "tpl": "标签",
-                              "inline": true,
-                              "wrapperComponent": "",
-                              "id": "u:bd6c12cb623d"
-                            }
-                          ],
-                          "size": "xs",
-                          "style": {
-                            "position": "static",
-                            "display": "block",
-                            "flex": "1 1 auto",
-                            "flexGrow": 1,
-                            "flexBasis": "auto"
-                          },
-                          "isFixedHeight": false,
-                          "isFixedWidth": false,
-                          "id": "u:5d3b26777500"
-                        },
-                        {
-                          "type": "wrapper",
-                          "body": [
-                            {
-                              "type": "tag",
-                              "label": "标签1",
-                              "displayMode": "rounded",
-                              "color": "inactive",
-                              "id": "u:7cae0730a48a",
-                              "name": "movie_tag"
-                            },
-                            {
-                              "type": "tag",
-                              "label": "标签2",
-                              "displayMode": "rounded",
-                              "color": "inactive",
-                              "id": "u:7cae0730a48a",
-                              "name": "movie_tag"
-                            },
-                            {
-                              "type": "tag",
-                              "label": "标签3",
-                              "displayMode": "rounded",
-                              "color": "inactive",
-                              "id": "u:7cae0730a48a",
-                              "name": "movie_tag"
-                            },
-                            {
-                              "type": "tag",
-                              "label": "标签4",
-                              "displayMode": "rounded",
-                              "color": "inactive",
-                              "id": "u:7cae0730a48a",
-                              "name": "movie_tag"
-                            }
-                          ],
-                          "size": "xs",
-                          "style": {
-                            "position": "static",
-                            "display": "block",
-                            "flex": "1 1 auto",
-                            "flexGrow": 1,
-                            "flexBasis": "auto"
-                          },
-                          "isFixedHeight": false,
-                          "isFixedWidth": false,
-                          "id": "u:0a40e6ec0327"
-                        }
-                      ],
-                      "style": {
-                        "position": "static",
-                        "overflowX": "auto",
-                        "overflowY": "auto",
-                        "margin": "0",
-                        "flex": "1 1 auto",
-                        "flexGrow": 1,
-                        "flexBasis": "auto"
-                      },
-                      "alignItems": "stretch",
-                      "direction": "column",
-                      "justify": "center",
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:f3caa6c7676a"
-                    }
-                  ],
-                  "style": {
-                    "flex": "1 1 auto",
-                    "overflowX": "auto",
-                    "margin": "0",
-                    "maxWidth": "auto",
-                    "overflowY": "auto",
-                    "position": "static",
-                    "minWidth": "auto",
-                    "width": "auto",
-                    "maxHeight": "auto",
-                    "minHeight": "300px"
-                  },
-                  "direction": "row",
-                  "justify": "flex-start",
-                  "alignItems": "stretch",
-                  "isFixedHeight": false,
-                  "isFixedWidth": false,
-                  "id": "u:c84d90c01186"
-                }
-              ],
-              "direction": "column",
-              "justify": "center",
-              "alignItems": "stretch",
-              "id": "u:cd869fe34267"
-            }
-          ],
-          "size": "xs",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 1,
-            "flexBasis": "auto"
-          },
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:fb6fc6f48ed7"
-        }
-      ],
-      "style": {
-        "position": "static"
-      },
-      "direction": "row",
-      "justify": "flex-start",
-      "alignItems": "stretch",
-      "id": "u:99d5cfd105ac"
-    },
-    {
-      "type": "flex",
-      "className": "p-1",
-      "items": [
-        {
-          "type": "wrapper",
-          "body": [
-            {
-              "type": "flex",
-              "className": "p-1",
-              "items": [
-                {
-                  "type": "wrapper",
-                  "size": "xs",
-                  "body": [
-                    {
-                      "type": "tpl",
-                      "tpl": "相似的电影",
-                      "inline": true,
-                      "wrapperComponent": "",
-                      "id": "u:c4f542d3aff7",
-                      "style": {
-                        "fontFamily": "",
-                        "fontSize": 28,
-                        "fontWeight": "bold"
-                      }
-                    }
-                  ],
-                  "style": {
-                    "flex": "0 0 auto",
-                    "display": "block"
-                  },
-                  "id": "u:345ec3efb92d"
-                },
-                {
-                  "type": "flex",
-                  "items": [
-                    {
-                      "type": "wrapper",
-                      "body": [
-                        {
-                          "type": "image",
-                          "id": "u:fdab6b5e33b5",
-                          "width": 200,
-                          "height": 250
-                        }
-                      ],
-                      "size": "xs",
-                      "style": {
-                        "position": "static",
-                        "display": "block",
-                        "flex": "1 1 auto",
-                        "flexGrow": 1,
-                        "flexBasis": "auto"
-                      },
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:b737c4377765"
-                    },
-                    {
-                      "type": "wrapper",
-                      "body": [
-                        {
-                          "type": "image",
-                          "id": "u:8592698179d8",
-                          "width": 200,
-                          "height": 250
-                        }
-                      ],
-                      "size": "xs",
-                      "style": {
-                        "position": "static",
-                        "display": "block",
-                        "flex": "1 1 auto",
-                        "flexGrow": 1,
-                        "flexBasis": "auto"
-                      },
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:514a84c1500a"
-                    },
-                    {
-                      "type": "wrapper",
-                      "body": [
-                        {
-                          "type": "image",
-                          "id": "u:88e318928f0d",
-                          "width": 200,
-                          "height": 250
-                        }
-                      ],
-                      "size": "xs",
-                      "style": {
-                        "position": "static",
-                        "display": "block",
-                        "flex": "1 1 auto",
-                        "flexGrow": 1,
-                        "flexBasis": "auto"
-                      },
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:a4f594097c04"
-                    },
-                    {
-                      "type": "wrapper",
-                      "body": [
-                        {
-                          "type": "image",
-                          "id": "u:6e92eac8d369",
-                          "width": 200,
-                          "height": 250
-                        }
-                      ],
-                      "size": "xs",
-                      "style": {
-                        "position": "static",
-                        "display": "block",
-                        "flex": "1 1 auto",
-                        "flexGrow": 1,
-                        "flexBasis": "auto"
-                      },
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:4b54c39d971a"
-                    },
-                    {
-                      "type": "flex",
-                      "items": [
-                        {
-                          "type": "wrapper",
-                          "size": "xs",
-                          "body": [
-                            {
-                              "type": "image",
-                              "id": "u:b4dd863f4391",
-                              "width": 200,
-                              "height": 250
-                            }
-                          ],
-                          "style": {
-                            "flex": "1 1 auto",
-                            "flexBasis": "auto",
-                            "flexGrow": 1,
-                            "display": "block"
-                          },
-                          "id": "u:6d43fd047170"
-                        }
-                      ],
-                      "style": {
-                        "position": "static",
-                        "overflowX": "auto",
-                        "overflowY": "auto",
-                        "margin": "0",
-                        "flex": "1 1 auto",
-                        "flexGrow": 1,
-                        "flexBasis": "auto"
-                      },
-                      "alignItems": "stretch",
-                      "direction": "column",
-                      "justify": "center",
-                      "isFixedHeight": false,
-                      "isFixedWidth": false,
-                      "id": "u:56262ce1d8d9"
-                    }
-                  ],
-                  "style": {
-                    "flex": "1 1 auto",
-                    "overflowX": "auto",
-                    "margin": "0",
-                    "maxWidth": "auto",
-                    "overflowY": "auto",
-                    "position": "static",
-                    "minWidth": "auto",
-                    "width": "auto",
-                    "maxHeight": "auto",
-                    "minHeight": "300px"
-                  },
-                  "direction": "row",
-                  "justify": "flex-start",
-                  "alignItems": "stretch",
-                  "isFixedHeight": false,
-                  "isFixedWidth": false,
-                  "id": "u:947ec3899301"
-                }
-              ],
-              "direction": "column",
-              "justify": "center",
-              "alignItems": "stretch",
-              "id": "u:910db14fdb15"
-            }
-          ],
-          "size": "xs",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 1,
-            "flexBasis": "auto"
-          },
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:11b75b1848bb"
-        }
-      ],
-      "style": {
-        "position": "static"
-      },
-      "direction": "row",
-      "justify": "flex-start",
-      "alignItems": "stretch",
-      "id": "u:8a927c00d10d"
+
+<head>
+  <meta charset="UTF-8" />
+  <title>amis demo</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <link rel="stylesheet" href="./sdk/sdk.css" />
+  <link rel="stylesheet" href="./sdk/helper.css" />
+  <link rel="stylesheet" href="./sdk/iconfont.css" />
+  <!-- 这是默认主题所需的，如果是其他主题则不需要 -->
+  <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
+  <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
+  <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
+  <style>
+    html,
+    body,
+    .app-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
     }
-  ],
-  "id": "u:ec424c96e3b0",
-  "toolbar": [
-  ]
-};
-        let amisScoped = amis.embed('#root', amisJSON);
-      })();
-    </script>
-  </body>
+  </style>
+</head>
+
+<body>
+  <div id="root" class="app-wrapper"></div>
+  <script src="./sdk/sdk.js"></script>
+  <script type="text/javascript">
+    (function () {
+      let amis = amisRequire('amis/embed');
+      // 通过替换下面这个配置来生成不同页面
+      let amisJSON = {
+        "type": "page",
+        "title": "",
+        "body": [
+          {
+            "type": "tpl",
+            "tpl": "欢迎！",
+            "inline": true,
+            "wrapperComponent": "h1",
+            "id": "u:ce42a3798e2c"
+          },
+          {
+            "type": "tpl",
+            "tpl": "首先，请告诉我们你的喜好。",
+            "inline": true,
+            "wrapperComponent": "h2",
+            "id": "u:52983b881649"
+          },
+          {
+            "type": "flex",
+            "className": "p-1",
+            "items": [
+              {
+                "type": "wrapper",
+                "body": [
+                  {
+                    "type": "images",
+                    "id": "u:d56b7be2d598",
+                    "thumbMode": "cover",
+                    "thumbRatio": "1:1",
+                    "options": [
+                      {
+                        "caption": "",
+                        "title": "玩具总动员",
+                        "image": "https://t15.baidu.com/it/u=1897928952,695572242&fm=58&app=83&size=w931&n=0&f=JPEG&fmt=auto?sec=1672419600&t=56f16608a5222fe8d0489f84957dcc68"
+                      },
+                      {
+                        "caption": "",
+                        "title": "疯狂动物城",
+                        "image": "https://t13.baidu.com/it/u=2820800462,4188414950&fm=58&app=83&size=w931&n=0&f=JPEG&fmt=auto?sec=1672938000&t=4df05ac595185d047f2b5db5b577f99c"
+                      },
+                      {
+                        "src": "",
+                        "caption": "",
+                        "title": "小黄人大眼萌",
+                        "image": "https://t13.baidu.com/it/u=466560730,3958067863&fm=58&app=83&size=w931&n=0&f=JPEG&fmt=auto?sec=1672938000&t=26a2dce15ef5212edcbe15bab880a418"
+                      }
+                    ],
+                    "enlargeAble": false
+                  },
+                  {
+                    "type": "button",
+                    "label": "选择",
+                    "onEvent": {
+                      "click": {
+                        "actions": [
+                          {
+                            "args": {
+                              "options": {
+                              },
+                              "api": {
+                                "url": "http://localhost:8082/choose",
+                                "method": "post",
+                                "messages": {
+                                },
+                                "data": {
+                                  "taglist": [
+                                    "Animation"
+                                  ]
+                                }
+                              }
+                            },
+                            "outputVar": "responseResult",
+                            "actionType": "ajax"
+                          },
+                          {
+                            "args": {
+                              "url": "http://localhost:8081/homeuser.html",
+                              "blank": false
+                            },
+                            "actionType": "url",
+                            "expression": ""
+                          }
+                        ]
+                      }
+                    },
+                    "id": "u:689abbf302d2"
+                  }
+                ],
+                "size": "xs",
+                "style": {
+                  "position": "static",
+                  "display": "block",
+                  "flex": "1 1 auto",
+                  "flexGrow": 1,
+                  "flexBasis": "auto"
+                },
+                "isFixedHeight": false,
+                "isFixedWidth": false,
+                "id": "u:57b7cdf20ffc"
+              },
+              {
+                "type": "wrapper",
+                "body": [
+                  {
+                    "type": "images",
+                    "id": "u:9e4c3cb34466",
+                    "thumbMode": "cover",
+                    "thumbRatio": "1:1",
+                    "options": [
+                      {
+                        "title": "唐人街探案3",
+                        "image": "https://t15.baidu.com/it/u=4109177431,1185138626&fm=58&app=83&size=w931&n=0&f=JPEG&fmt=auto?sec=1672938000&t=a3db68dbc426719d721774fee7ba38a0"
+                      },
+                      {
+                        "title": "捉妖记",
+                        "image": "https://t15.baidu.com/it/u=1092282666,1300310042&fm=58&app=83&size=w931&n=0&f=JPEG&fmt=auto?sec=1672938000&t=5f2eaff28d630ff0c6e75f55cad9b156"
+                      },
+                      {
+                        "title": "喜剧之王1",
+                        "image": "https://t11.baidu.com/it/u=1927778752,4013220569&fm=58&app=83&f=JPEG?w=200&h=266"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "button",
+                    "label": "选择",
+                    "onEvent": {
+                      "click": {
+                        "actions": [
+                          {
+                            "args": {
+                              "options": {
+                              },
+                              "api": {
+                                "url": "http://localhost:8082/choose",
+                                "method": "post",
+                                "messages": {
+                                },
+                                "data": {
+                                  "taglist": [
+                                    "Comedy"
+                                  ]
+                                }
+                              }
+                            },
+                            "outputVar": "responseResult",
+                            "actionType": "ajax"
+                          },
+                          {
+                            "args": {
+                              "url": "http://localhost:8081/homeuser.html",
+                              "blank": false
+                            },
+                            "actionType": "url",
+                            "expression": ""
+                          }
+                        ]
+                      }
+                    },
+                    "id": "u:a47358f8dcaa"
+                  }
+                ],
+                "size": "xs",
+                "style": {
+                  "position": "static",
+                  "display": "block",
+                  "flex": "1 1 auto",
+                  "flexGrow": 1,
+                  "flexBasis": "auto"
+                },
+                "isFixedHeight": false,
+                "isFixedWidth": false,
+                "id": "u:3f27ed8b139f"
+              },
+              {
+                "type": "wrapper",
+                "body": [
+                ],
+                "size": "xs",
+                "style": {
+                  "position": "static",
+                  "display": "block",
+                  "flex": "1 1 auto",
+                  "flexGrow": 1,
+                  "flexBasis": "auto"
+                },
+                "isFixedHeight": false,
+                "isFixedWidth": false,
+                "id": "u:c0ab6b884371"
+              }
+            ],
+            "style": {
+              "position": "static"
+            },
+            "direction": "row",
+            "justify": "flex-start",
+            "alignItems": "stretch",
+            "id": "u:d7d11b94a640"
+          },
+          {
+            "type": "flex",
+            "className": "p-1",
+            "items": [
+              {
+                "type": "wrapper",
+                "body": [
+                  {
+                    "type": "images",
+                    "id": "u:8a4c86ad2a55",
+                    "thumbMode": "cover",
+                    "thumbRatio": "1:1",
+                    "options": [
+                      {
+                        "title": "爱乐之城",
+                        "image": "https://t13.baidu.com/it/u=1261766115,1589316979&fm=58&app=83&size=w931&n=0&f=JPEG&fmt=auto?sec=1672938000&t=c2f61005af43473228c03a09100fa33b"
+                      },
+                      {
+                        "title": "钢的琴",
+                        "image": "https://t14.baidu.com/it/u=710036970,3001659599&fm=58&app=83&size=w931&n=0&f=JPEG&fmt=auto?sec=1672938000&t=150467e1ef91b92b37785f4658c5931d"
+                      },
+                      {
+                        "title": "海上钢琴师",
+                        "image": "https://t15.baidu.com/it/u=669432584,764864283&fm=58&app=83&size=w931&n=0&f=JPEG&fmt=auto?sec=1672938000&t=79ca015dcbc6dd2d8822e9397b0f8696"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "button",
+                    "label": "选择",
+                    "onEvent": {
+                      "click": {
+                        "actions": [
+                          {
+                            "args": {
+                              "options": {
+                              },
+                              "api": {
+                                "url": "http://localhost:8082/choose",
+                                "method": "post",
+                                "messages": {
+                                },
+                                "data": {
+                                  "taglist": [
+                                    "Drama"
+                                  ]
+                                }
+                              }
+                            },
+                            "outputVar": "responseResult",
+                            "actionType": "ajax"
+                          },
+                          {
+                            "args": {
+                              "url": "http://localhost:8081/homeuser.html",
+                              "blank": false
+                            },
+                            "actionType": "url",
+                            "expression": ""
+                          }
+                        ]
+                      }
+                    },
+                    "id": "u:342dc4849e28"
+                  }
+                ],
+                "size": "xs",
+                "style": {
+                  "position": "static",
+                  "display": "block",
+                  "flex": "1 1 auto",
+                  "flexGrow": 1,
+                  "flexBasis": "auto"
+                },
+                "isFixedHeight": false,
+                "isFixedWidth": false,
+                "id": "u:d71c36612637"
+              },
+              {
+                "type": "wrapper",
+                "body": [
+                  {
+                    "type": "images",
+                    "id": "u:e2021954a216",
+                    "thumbMode": "cover",
+                    "thumbRatio": "1:1",
+                    "options": [
+                      {
+                        "title": "速度与激情10",
+                        "image": "https://t12.baidu.com/it/u=2482643519,586903050&fm=58&app=83&f=JPEG?w=200&h=266"
+                      },
+                      {
+                        "title": "阿凡达3",
+                        "image": "https://t10.baidu.com/it/u=2399500485,3582985467&fm=58&app=83&f=JPEG?w=200&h=266"
+                      },
+                      {
+                        "title": "毒液2",
+                        "image": "https://t11.baidu.com/it/u=2458012881,3913952286&fm=58&app=83&f=JPEG?w=200&h=266"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "button",
+                    "label": "选择",
+                    "onEvent": {
+                      "click": {
+                        "actions": [
+                          {
+                            "args": {
+                              "options": {
+                              },
+                              "api": {
+                                "url": "http://localhost:8082/choose",
+                                "method": "post",
+                                "messages": {
+                                },
+                                "data": {
+                                  "taglist": [
+                                    "Adventure"
+                                  ]
+                                }
+                              }
+                            },
+                            "outputVar": "responseResult",
+                            "actionType": "ajax"
+                          },
+                          {
+                            "args": {
+                              "url": "http://localhost:8081/homeuser.html",
+                              "blank": false
+                            },
+                            "actionType": "url",
+                            "expression": ""
+                          }
+                        ]
+                      }
+                    },
+                    "id": "u:0a99974a4680"
+                  }
+                ],
+                "size": "xs",
+                "style": {
+                  "position": "static",
+                  "display": "block",
+                  "flex": "1 1 auto",
+                  "flexGrow": 1,
+                  "flexBasis": "auto"
+                },
+                "isFixedHeight": false,
+                "isFixedWidth": false,
+                "id": "u:1752ad973dfc"
+              },
+              {
+                "type": "wrapper",
+                "body": [
+                ],
+                "size": "xs",
+                "style": {
+                  "position": "static",
+                  "display": "block",
+                  "flex": "1 1 auto",
+                  "flexGrow": 1,
+                  "flexBasis": "auto"
+                },
+                "isFixedHeight": false,
+                "isFixedWidth": false,
+                "id": "u:5b074dcbcc44"
+              }
+            ],
+            "style": {
+              "position": "static"
+            },
+            "direction": "row",
+            "justify": "flex-start",
+            "alignItems": "stretch",
+            "id": "u:142753c8ba23"
+          }
+        ],
+        "id": "u:beeb5b32df40",
+        "asideResizor": false,
+        "pullRefresh": {
+          "disabled": true
+        },
+        "aside": [
+        ],
+        "style": {
+          "fontFamily": "",
+          "fontSize": 12,
+          "fontWeight": "bold"
+        },
+        "toolbar": [
+        ]
+      };
+      let amisScoped = amis.embed('#root', amisJSON);
+    })();
+  </script>
+</body>
+
 </html>
